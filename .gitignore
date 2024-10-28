@@ -485,3 +485,6 @@ $RECYCLE.BIN/
 
 # Obsidian related files
 Obsidian/
+
+# CSharpier
+.config
