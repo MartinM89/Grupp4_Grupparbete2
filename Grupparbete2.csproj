@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- SoundPlayer -->
+    <PackageReference Include="System.Windows.Extensions" Version="9.0.0-rc.2.24473.5" />
+
+    <!-- MediaPlayer -->
+    <!-- <PackageReference Include="LibVLCSharp" Version="3.9.0" /> -->
+    <!-- <Content Include="libvlc\libvlc.dll" CopyToOutputDirectory="PreserveNewest" /> -->
+    <!-- <Content Include="libvlc\libvlccore.dll" CopyToOutputDirectory="PreserveNewest" /> -->
+  </ItemGroup>
+
+
+</Project>
