@@ -7,37 +7,51 @@ class KeypadInteraction
         {
             Console.Clear();
 
-            Console.WriteLine($"Attempts left: {Program.attemptsLeft}");
-
-            string userCode = EnterCode.RunCommand();
-
-            string textCode = "";
+            string textCode = "";  // Method?
 
             foreach (int n in PuzzleManager.passwordNum)
             {
                 textCode += n.ToString();
             }
 
-            if (userCode.Equals("inventory") || userCode.Equals("inv"))
+            Console.WriteLine($"Attempts left: {Program.attemptsLeft}");
+
+            string userCode = EnterCode.RunCommand();
+
+            if (userCode.All(char.IsDigit) && userCode.Length.Equals(4))
             {
-                CheckInventoryCommand.RunCommand();
-                continue;
+                if (userCode != textCode && userCode.Length.Equals(4))
+                {
+                    Console.Clear();
+                    Program.attemptsLeft--;
+                    Console.WriteLine("Wrong code.");
+                    PressKeyToContinue.RunCommand();
+                }
+                else if (userCode.Equals(textCode))
+                {
+                    Highscore.Execute();
+                    return;
+                }
             }
-            else if (userCode.Equals("leave"))
+            else
             {
-                return;
-            }
-            else if (userCode != textCode)
-            {
-                Console.Clear();
-                Program.attemptsLeft--;
-                Console.WriteLine("Wrong code.");
-                PressKeyToContinue.RunCommand();
-            }
-            else if (userCode.Equals(textCode))
-            {
-                Highscore.Execute();
-                return;
+                switch (userCode)
+                {
+                    case "inventory" or "inv":
+                        CheckInventoryCommand.RunCommand();
+                        break;
+
+                    case "help":
+                        HelpCommand.RunCommand();
+                        break;
+
+                    case "leave" or "":
+                        return;
+
+                    default:
+                        InvalidInput.RunCommand(userCode);
+                        break;
+                }
             }
         }
         Console.Clear();

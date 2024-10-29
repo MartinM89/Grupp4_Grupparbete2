@@ -60,7 +60,6 @@ class Program
 
             PuzzleManager.PrintCode(); // Debugging
             PuzzleManager.PrintNumberCode(); // Debugging
-
             Console.WriteLine("*************************************************************************"); // Debugging
 
             Dialogue.PrintRoomDescription();
