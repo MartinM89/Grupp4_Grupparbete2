@@ -295,6 +295,7 @@ public class Bulb : Tool
     public Bulb() : base("Bulb", "A small, dusty light bulb. When held, it feels unusually cold.")
     {
     }
+
     public override void UseTool()
     {
         Console.WriteLine("Narrator:");
@@ -311,6 +312,32 @@ public class Bulb : Tool
     {
         Console.WriteLine("Narrator:");
         Console.WriteLine("  A small, dusty light bulb. When held, it feels unusually cold.\n");
+    }
+}
+
+public class Key : Tool
+{
+    public Key() : base("Key", "An old scratched metal key.")
+    {
+    }
+
+    public override void UseTool()
+    {
+        Console.WriteLine("Narrator:");
+        Console.WriteLine("  You twist the key into position and hear a click.");
+    }
+
+    public override void MissingTool()
+    {
+        Console.WriteLine("Narrator:");
+        Console.WriteLine("  You don't have the required key.");
+    }
+
+    public override void PrintFindItem()
+    {
+        Console.WriteLine("Narrator:");
+        Console.WriteLine("  You find a key hidden between the painting and its back. The old man");
+        Console.WriteLine("  must've hidden it here a long time ago.");
     }
 }
 #endregion

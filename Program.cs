@@ -91,7 +91,7 @@ class Program
 */
 
 /*
-    No wasted keypad attempts
+    No wasted keypad attempts  // Klar - More testing
     Add audio effects
     Change color on keywords when fully investigated
     Cheat with key (If time allows)
