@@ -58,10 +58,10 @@ class Program
         {
             Console.Clear();
 
-            // PuzzleManager.PrintCode(); // Debugging
-            // PuzzleManager.PrintNumberCode(); // Debugging
+            PuzzleManager.PrintCode(); // Debugging
+            PuzzleManager.PrintNumberCode(); // Debugging
 
-            // Console.WriteLine("*************************************************************************"); // Debugging
+            Console.WriteLine("*************************************************************************"); // Debugging
 
             Dialogue.PrintRoomDescription();
 
