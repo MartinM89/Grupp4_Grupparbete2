@@ -108,4 +108,15 @@ public class Highscore
         PressKeyToContinue.RunCommand();
         ExitCommand.RunCommand();
     }
+
+    public static string ConvertCodeToString()
+    {
+        string textCode = "";
+
+        foreach (int n in PuzzleManager.passwordNum)
+        {
+            textCode += n.ToString();
+        }
+        return textCode;
+    }
 }

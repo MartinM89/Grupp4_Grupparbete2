@@ -7,12 +7,7 @@ class KeypadInteraction
         {
             Console.Clear();
 
-            string textCode = "";  // Method?
-
-            foreach (int n in PuzzleManager.passwordNum)
-            {
-                textCode += n.ToString();
-            }
+            string textCode = Highscore.ConvertCodeToString();
 
             Console.WriteLine($"Attempts left: {Program.attemptsLeft}");
 
