@@ -32,7 +32,6 @@ Classes:
     - Key (Cheat) - Check
     - Ambient background music - Check
 */
-
 class Program
 {
     public static TimeSpan StartTime = DateTime.Now.TimeOfDay;
@@ -48,11 +47,12 @@ class Program
         // Inventory.letter.PrintFindItem();
         // PressKeyToContinue.RunCommand();
 
+        AudioPlayer.PlayBackgroundMusic("./Audio/Audio/journal_read.wav");
+         AudioPlayer.PlayBackgroundMusic("./Audio/Audio/.wav");
+
         Console.Clear();
         HowToPlay.RunCommand();
         PressKeyToContinue.RunCommand();
-
-        PlayAudio.PlayBackgroundMusic();
 
         while (running)
         {
