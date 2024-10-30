@@ -52,8 +52,15 @@ class Dialogue
         Console.WriteLine("Narrator:");
         Console.WriteLine("  A large, dust-covered canvas hangs crooked on the wall. The paint is ");
         Console.WriteLine("  cracked and peeling. Faint outlines of a landscape can be seen through");
-        Console.WriteLine("  the decay, but the details are too worn to fully make out. The frame,");
-        Console.WriteLine("  once ornate, is tarnished, giving it a ghostly, abandoned feel.");
+        Console.WriteLine("  the decay, but the details are too worn to fully make out. You can see");
+        Console.WriteLine("  something through the cracks.");
+    }
+
+    public static void PrintPaintingEmptyDescription()
+    {
+        Console.WriteLine("Narrator:");
+        Console.WriteLine("  The painting frame is a little loose, you can't seem to put it back");
+        Console.WriteLine("  the way it used to be.");
     }
     #endregion
 
@@ -253,15 +260,17 @@ class Dialogue
     {
         Console.WriteLine("Narrator:");
         Console.Write("  You step closer to the old safe, its metal cold and heavy. A "); Color.TextYellow("keypad\n");
-        Console.WriteLine("  waits for the right code to unlock it. Resting on top is a worn");
-        Color.TextGreen("  journal"); Console.WriteLine(", its cover frayed and pages slightly yellowed.");
+        Console.WriteLine("  waits for the right code to unlock it. Below it is a keyhole centered.");
+        Console.Write("  Resting on top is a worn "); Color.TextGreen("journal"); Console.WriteLine(" its cover frayed and pages slightly");
+        Console.WriteLine("  yellowed.");
     }
 
     public static void PrintNoJournalSafeDescription()
     {
         Console.WriteLine("Narrator:");
         Console.Write("  You step closer to the old safe, its metal cold and heavy. A "); Color.TextYellow("keypad\n");
-        Console.WriteLine("  waits for the right code to unlock it.");
+        Console.WriteLine("  waits for the right code to unlock it. Below it is a keyhole centered.");
+        Console.WriteLine("  The journal that used to lie on top of the safe is now in your pockets.");
     }
     #endregion
 

@@ -29,8 +29,8 @@ Classes:
     - High score - Check
     - Timer - Check
     - Bed - Sleep (Dream and lose time but gain another attempt) - Check
-    - Key (Cheat)
-    - Ambient music
+    - Key (Cheat) - Check
+    - Ambient background music - Check
 */
 
 class Program
@@ -91,9 +91,10 @@ class Program
 */
 
 /*
-    No wasted keypad attempts  // Klar - More testing
     Add audio effects
     Change color on keywords when fully investigated
+
+
     Cheat with key (If time allows)
         1. Key hidden behind painting
         2. Three keys instead of one

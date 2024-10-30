@@ -10,10 +10,7 @@ public class PaintingLocation
         if (KeyAddedToInventory)
         {
             Console.Clear();
-            // Dialogue.PrintPaintingEmptyDescription();
-            Console.WriteLine("Narrator:");
-            Console.WriteLine("  The painting frame is a little loose, you can't seem to put it back");
-            Console.WriteLine("  the way it used to be.");
+            Dialogue.PrintPaintingEmptyDescription();
             PressKeyToContinue.RunCommand();
         }
 

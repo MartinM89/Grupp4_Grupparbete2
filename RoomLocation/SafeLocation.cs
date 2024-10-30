@@ -28,6 +28,11 @@ public class SafeLocation
                     KeypadInteraction.RunCommand();
                     break;
 
+                case "key":
+                    Console.Clear();
+                    KeyInteraction.InsertKey(userChoice);
+                    break;
+
                 case "journal":
                     Console.Clear();
                     JournalInteraction.RunCommand();

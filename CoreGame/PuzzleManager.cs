@@ -51,4 +51,15 @@ public class PuzzleManager
         }
         Console.WriteLine();
     }
+
+    public static string ConvertCodeToString()
+    {
+        string textCode = "";
+
+        foreach (int n in PuzzleManager.passwordNum)
+        {
+            textCode += n.ToString();
+        }
+        return textCode;
+    }
 }

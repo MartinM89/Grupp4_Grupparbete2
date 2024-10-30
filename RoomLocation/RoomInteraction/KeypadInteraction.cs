@@ -7,7 +7,7 @@ class KeypadInteraction
         {
             Console.Clear();
 
-            string textCode = Highscore.ConvertCodeToString();
+            string textCode = PuzzleManager.ConvertCodeToString();
 
             Console.WriteLine($"Attempts left: {Program.attemptsLeft}");
 
@@ -15,7 +15,7 @@ class KeypadInteraction
 
             if (userCode.All(char.IsDigit) && userCode.Length.Equals(4))
             {
-                if (userCode != textCode && userCode.Length.Equals(4))
+                if (userCode != textCode)
                 {
                     Console.Clear();
                     Program.attemptsLeft--;

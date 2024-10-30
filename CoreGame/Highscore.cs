@@ -5,6 +5,7 @@ public class Highscore
     public static List<Highscore> highscoreList = new List<Highscore>();
     public string? Name { get; private set; }
     public TimeSpan Time { get; private set; }
+
     public Highscore(string name, TimeSpan time)
     {
         this.Name = name;
@@ -88,16 +89,20 @@ public class Highscore
             int sec = Highscore.highscoreList[i].Time.Seconds;
             int hundredth = Highscore.highscoreList[i].Time.Milliseconds / 10;
 
-            tookHours = $"Place {i + 1} - {Highscore.highscoreList[i].Name}\t\tTime: {hour}h {min}min {sec},{hundredth}sec";
-            tookMinutes = $"Place {i + 1} - {Highscore.highscoreList[i].Name}\t\tTime: {min}min {sec},{hundredth}sec";
+            tookHours =
+                $"Place {i + 1} - {Highscore.highscoreList[i].Name}\t\tTime: {hour}h {min}min {sec},{hundredth}sec";
+            tookMinutes =
+                $"Place {i + 1} - {Highscore.highscoreList[i].Name}\t\tTime: {min}min {sec},{hundredth}sec";
 
             string r = hour > 0 ? tookHours : tookMinutes;
 
             Console.WriteLine(r);
         }
 
-        tookHours = $"\n\tYour time: {finalTime.Hours}h {finalTime.Minutes}min {finalTime.Seconds},{finalTime.Milliseconds / 10}sec!";
-        tookMinutes = $"\n\tYour time: {finalTime.Minutes}min {finalTime.Seconds},{finalTime.Milliseconds / 10}sec";
+        tookHours =
+            $"\n\tYour time: {finalTime.Hours}h {finalTime.Minutes}min {finalTime.Seconds},{finalTime.Milliseconds / 10}sec!";
+        tookMinutes =
+            $"\n\tYour time: {finalTime.Minutes}min {finalTime.Seconds},{finalTime.Milliseconds / 10}sec";
 
         result = finalTime.Hours > 0 ? tookHours : tookMinutes;
 
@@ -107,16 +112,5 @@ public class Highscore
 
         PressKeyToContinue.RunCommand();
         ExitCommand.RunCommand();
-    }
-
-    public static string ConvertCodeToString()
-    {
-        string textCode = "";
-
-        foreach (int n in PuzzleManager.passwordNum)
-        {
-            textCode += n.ToString();
-        }
-        return textCode;
     }
 }
