@@ -12,7 +12,7 @@ public class Highscore
         this.Time = time;
     }
 
-    public static void RunCommand()
+    public static void RunCommand() // Fixa
     {
         string filePath = "./Utilities/highscore.json";
 
@@ -36,7 +36,7 @@ public class Highscore
         }
     }
 
-    public static void Execute()
+    public static void Execute() // Fixa
     {
         Console.Clear();
         Dialogue.PrintYouWin();

@@ -12,6 +12,7 @@ public class NoteInteraction
         {
             Console.Clear();
             KnifeInteraction.knife.UseTool();
+            PlayAudio.RugCut();
 
             bool canPickUp = Inventory.PLAYER_INVENTORY.CheckDuplicateItem(note);
 

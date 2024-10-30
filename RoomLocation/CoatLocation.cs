@@ -8,6 +8,7 @@ public class CoatLocation
         {
             Console.Clear();
             Dialogue.PrintEmptyCoatDescription();
+            LocationManager.Investigated("coat");
             PressKeyToContinue.RunCommand();
         }
 

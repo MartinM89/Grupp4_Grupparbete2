@@ -7,6 +7,7 @@ public class TableLocation
         {
             Console.Clear();
             Dialogue.PrintTableCompleteDescription();
+            LocationManager.Investigated("table");
             PressKeyToContinue.RunCommand();
 
         }
@@ -34,7 +35,7 @@ public class TableLocation
                 case "inventory" or "inv":
                     CheckInventoryCommand.RunCommand();
                     break;
-                
+
                 case "help":
                     HelpCommand.RunCommand();
                     break;

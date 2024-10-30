@@ -1,168 +1,210 @@
 using System.Media;
 using System.Runtime.InteropServices;
-using NAudio.Wave;
 
-public static class AudioPlayer
+public class PlayAudio
 {
-    private static IAudioPlayer _audioPlayer;
-    private static bool _isLooping = true;
+    private static SoundPlayer? soundPlayer;
 
-    public static bool IsLooping
+    public static void BackgroundMusic()
     {
-        get { return _isLooping; }
-        set
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         {
-            _isLooping = value;
-            _audioPlayer?.SetLooping(_isLooping);
+            return;
         }
+
+        string ambientMusicFilePath = "./Audio/The Foyer.wav";
+
+        if (soundPlayer == null)
+        {
+            soundPlayer = new SoundPlayer();
+        }
+
+        soundPlayer.SoundLocation = ambientMusicFilePath;
+        soundPlayer.PlayLooping();
     }
 
-    public static void PlayBackgroundMusic(string filePath)
+    public static void Journal()
     {
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         {
-            _audioPlayer = new WindowsAudioPlayer();
-        }
-        else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-        {
-            _audioPlayer = new MacAudioPlayer();
-        }
-        else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-        {
-            // _audioPlayer = new LinuxAudioPlayer();
-        }
-        else
-        {
-            throw new PlatformNotSupportedException("Audio playback is not supported on this platform.");
+            return;
         }
 
-        _audioPlayer.Initialize(filePath);
-        _audioPlayer.SetLooping(_isLooping);
-        _audioPlayer.Play();
+        string journal_read_audio = "./Audio/Audio/journal_read.wav";
+
+        if (soundPlayer == null)
+        {
+            soundPlayer = new SoundPlayer();
+        }
+
+        soundPlayer.SoundLocation = journal_read_audio;
+        soundPlayer.PlaySync();
+
+        BackgroundMusic();
     }
 
-    public static void Stop()
+    public static void Lightbuld()
     {
-        _audioPlayer?.Stop();
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return;
+        }
+
+        string lightbulb_screw_audio = "./Audio/Audio/lightbulb_screw.wav";
+
+        if (soundPlayer == null)
+        {
+            soundPlayer = new SoundPlayer();
+        }
+
+        soundPlayer.SoundLocation = lightbulb_screw_audio;
+        soundPlayer.PlaySync();
+
+        BackgroundMusic();
+    }
+
+    public static void Mirror()
+    {
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return;
+        }
+
+        string mirror_move_audio = "./Audio/Audio/mirror_move.wav";
+
+        if (soundPlayer == null)
+        {
+            soundPlayer = new SoundPlayer();
+        }
+
+        soundPlayer.SoundLocation = mirror_move_audio;
+        soundPlayer.PlaySync();
+
+        BackgroundMusic();
+    }
+
+    public static void RugCut()
+    {
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return;
+        }
+
+        string rug_cut_audio = "./Audio/Audio/rug_cut.wav";
+
+        if (soundPlayer == null)
+        {
+            soundPlayer = new SoundPlayer();
+        }
+
+        soundPlayer.SoundLocation = rug_cut_audio;
+        soundPlayer.PlaySync();
+
+        BackgroundMusic();
+    }
+
+    public static void TapestryRip()
+    {
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return;
+        }
+
+        string tapestry_rip_audio = "./Audio/Audio/tapestry_rip.wav";
+
+        if (soundPlayer == null)
+        {
+            soundPlayer = new SoundPlayer();
+        }
+
+        soundPlayer.SoundLocation = tapestry_rip_audio;
+        soundPlayer.PlaySync();
+
+        BackgroundMusic();
+    }
+
+    public static void TapestryScraper()
+    {
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return;
+        }
+
+        string tapestry_scraper_rip_audio = "./Audio/Audio/tapestry_scraper.wav";
+
+        if (soundPlayer == null)
+        {
+            soundPlayer = new SoundPlayer();
+        }
+
+        soundPlayer.SoundLocation = tapestry_scraper_rip_audio;
+        soundPlayer.PlaySync();
+
+        BackgroundMusic();
+    }
+
+    public static void WardrobeCrowbar()
+    {
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return;
+        }
+
+        string wardrobe_crowbar_creak_audio = "./Audio/Audio/wardrobe_crowbar_creak.wav";
+
+        if (soundPlayer == null)
+        {
+            soundPlayer = new SoundPlayer();
+        }
+
+        soundPlayer.SoundLocation = wardrobe_crowbar_creak_audio;
+        soundPlayer.PlaySync();
+
+        BackgroundMusic();
+    }
+
+    public static void Wind()
+    {
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return;
+        }
+
+        string window_wind_audio = "./Audio/Audio/window_wind.wav";
+
+        if (soundPlayer == null)
+        {
+            soundPlayer = new SoundPlayer();
+        }
+
+        soundPlayer.SoundLocation = window_wind_audio;
+        soundPlayer.PlaySync();
+
+        BackgroundMusic();
     }
 }
 
-public interface IAudioPlayer
-{
-    void Initialize(string filePath);
-    void Play();
-    void Pause();
-    void Stop();
-    void SetLooping(bool isLooping);
-}
 
-class WindowsAudioPlayer : IAudioPlayer
-{
-    private SoundPlayer _soundPlayer;
 
-    public void Initialize(string filePath)
-    {
-        _soundPlayer = new SoundPlayer(filePath);
-    }
 
-    public void Play()
-    {
-        _soundPlayer.PlayLooping();
-    }
 
-    public void Pause()
-    {
-        _soundPlayer.Stop();
-    }
 
-    public void Stop()
-    {
-        _soundPlayer.Stop();
-    }
 
-    public void SetLooping(bool isLooping)
-    {
-        // No-op, SoundPlayer always plays in a loop
-    }
-}
 
-class MacAudioPlayer : IAudioPlayer
-{
-    private AudioFileReader _audioFileReader;
-    private WaveOutEvent _waveOutEvent;
 
-    public void Initialize(string filePath)
-    {
-        _audioFileReader = new AudioFileReader(filePath);
-        _waveOutEvent = new WaveOutEvent();
-    }
 
-    public void Play()
-    {
-        _waveOutEvent.Play();
-        PlayLooping();
-    }
 
-    private void PlayLooping()
-    {
-        _audioFileReader.CurrentTime = TimeSpan.Zero;
-        _waveOutEvent.Volume = 1.0f;
-        _waveOutEvent.DesiredLatency = 100;
-        _waveOutEvent.PlaybackStopped += WaveOutEvent_PlaybackStopped;
-    }
 
-    private void WaveOutEvent_PlaybackStopped(object? sender, StoppedEventArgs e)
-    {
-        if (AudioPlayer.IsLooping)
-            PlayLooping();
-    }
 
-    public void Pause()
-    {
-        _waveOutEvent.Stop();
-    }
 
-    public void Stop()
-    {
-        _waveOutEvent.Stop();
-        _audioFileReader.Dispose();
-    }
 
-    public void SetLooping(bool isLooping)
-    {
-        AudioPlayer.IsLooping = isLooping;
-    }
-}
-// public class PlayAudio
-// {
-//     private static SoundPlayer? soundPlayer;
 
-//     public static void PlayBackgroundMusic()
-//     {
-//         if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-//         {
-//             return;
-//         }
 
-//         string ambientMusicFilePath = "./Audio/The Foyer.wav";
-//         string journal_read_audio = ".Audio/Audio/journal_read.wav";
-//         string lightbulb_screw_audio = "./Audio/Audio/lightbulb_screw.wav";
-//         string mirror_move_audio = ".Audio/Audio/mirror_move.wav";
-//         string rug_cut_audio = ".Audio/Audio/rug_cut.wav";
-//         string tapestry_rip_audio = ".Audio/Audio/tapestry_rip.wav";
-//         string tapestry_scraper_rip_audio = ".Audio/Audio/tapestry_scraper_rip.wav";
-//         string wardrobe_crowbar_creak_audio = ".Audio/Audio/wardrobe_crowbar_creak.wav";
-//         string window_wind_audio = ".Audio/Audio/window_wind.wav";
 
-//         if (soundPlayer == null)
-//         {
-//             soundPlayer = new SoundPlayer();
-//         }
 
-//         soundPlayer.SoundLocation = ambientMusicFilePath!;
-//         soundPlayer.PlayLooping();
-//     }
-// }
+
+
+
 
 
 // using LibVLCSharp.Shared;

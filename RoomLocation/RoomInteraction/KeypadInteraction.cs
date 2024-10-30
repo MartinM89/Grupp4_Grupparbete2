@@ -13,40 +13,36 @@ class KeypadInteraction
 
             string userCode = EnterCode.RunCommand();
 
-            if (userCode.All(char.IsDigit) && userCode.Length.Equals(4))
+            if (userCode != textCode && userCode.All(char.IsDigit) && userCode.Length.Equals(4))
             {
-                if (userCode != textCode)
-                {
-                    Console.Clear();
-                    Program.attemptsLeft--;
-                    Console.WriteLine("Wrong code.");
-                    PressKeyToContinue.RunCommand();
-                }
-                else if (userCode.Equals(textCode))
-                {
-                    Highscore.Execute();
-                    return;
-                }
+                Console.Clear();
+                Program.attemptsLeft--;
+                Console.WriteLine("Wrong code.");
+                PressKeyToContinue.RunCommand();
+                continue;
             }
-            else
+            else if (userCode.Equals(textCode))
             {
-                switch (userCode)
-                {
-                    case "inventory" or "inv":
-                        CheckInventoryCommand.RunCommand();
-                        break;
+                Highscore.Execute();
+                return;
+            }
 
-                    case "help":
-                        HelpCommand.RunCommand();
-                        break;
+            switch (userCode)
+            {
+                case "inventory" or "inv":
+                    CheckInventoryCommand.RunCommand();
+                    break;
 
-                    case "leave" or "":
-                        return;
+                case "help":
+                    HelpCommand.RunCommand();
+                    break;
 
-                    default:
-                        InvalidInput.RunCommand(userCode);
-                        break;
-                }
+                case "leave" or "":
+                    return;
+
+                default:
+                    InvalidInput.RunCommand(userCode);
+                    break;
             }
         }
         Console.Clear();

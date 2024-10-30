@@ -39,9 +39,8 @@ public class GameManager
             case "tapestry":
                 TapestryLocation.RunCommand();
                 break;
-                
+
             case "wardrobe":
-                Console.Clear();
                 WardrobeLocation.RunCommand();
                 break;
 

@@ -27,7 +27,7 @@ public class WardrobeLocation
                     HelpCommand.RunCommand();
                     break;
 
-                case "leave":
+                case "leave" or "":
                     return;
 
                 default:
@@ -38,7 +38,9 @@ public class WardrobeLocation
 
         if (ShoesAddedToInventory && DollAddedToInventory)
         {
+            Console.Clear();
             Dialogue.PrintWardrobeEmptyDescription();
+            LocationManager.Investigated("wardrobe");
             PressKeyToContinue.RunCommand();
         }
 

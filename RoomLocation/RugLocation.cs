@@ -7,6 +7,7 @@ public class RugLocation
         {
             Console.Clear();
             Dialogue.PrintRugEmptyDescription();
+            LocationManager.Investigated("rug");
             PressKeyToContinue.RunCommand();
         }
 

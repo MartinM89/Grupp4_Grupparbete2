@@ -3,14 +3,11 @@ public class PaintingLocation
     public static bool KeyAddedToInventory = false;
     public static void RunCommand()
     {
-        // Console.Clear();
-        // Dialogue.PrintPaintingDescription();
-        // PressKeyToContinue.RunCommand();
-
         if (KeyAddedToInventory)
         {
             Console.Clear();
             Dialogue.PrintPaintingEmptyDescription();
+            LocationManager.Investigated("painting");
             PressKeyToContinue.RunCommand();
         }
 

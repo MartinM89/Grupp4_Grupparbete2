@@ -9,7 +9,7 @@ public class PuzzleManager
 
         List<int> availableNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-        for (int i = 0; i < 4; i++)  // För att man inte ska få samma siffra två gånger
+        for (int i = 0; i < 4; i++)
         {
             int randomIndex = random.Next(availableNumbers.Count);
 
@@ -17,7 +17,7 @@ public class PuzzleManager
 
             availableNumbers.RemoveAt(randomIndex);
 
-            passwordChar[i] = passwordNum[i] switch // Switch expression
+            passwordChar[i] = passwordNum[i] switch
             {
                 0 => 'G',
                 1 => 'D',

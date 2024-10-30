@@ -25,7 +25,7 @@ public class Inventory // Bluprint
         {
             if (item.Equals(i))
             {
-                Console.WriteLine($"You already have the {item.Name}.");
+                Console.WriteLine($"You already have the {item.Name}."); // Ta en titt
                 PressKeyToContinue.RunCommand();
                 return false;
             }
@@ -40,8 +40,6 @@ public class Inventory // Bluprint
         {
             if (tool.Equals(t))
             {
-                // Console.WriteLine($"You already have the {tool.Name}.");
-                // PressKeyToContinue.RunCommand();
                 return false;
             }
         }
@@ -62,7 +60,7 @@ public class Inventory // Bluprint
         return null!;
     }
 
-    public void PrintInventory()
+    public void PrintInventory() // Fixa
     {
         if (items.Count != 0 || tools.Count != 0)
         {

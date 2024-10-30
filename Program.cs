@@ -38,6 +38,7 @@ class Program
     public static bool running = true;
     public static bool leaveLocation = true;
     public static int attemptsLeft = 3;
+
     static void Main(string[] args)
     {
         Highscore.RunCommand();
@@ -47,12 +48,11 @@ class Program
         // Inventory.letter.PrintFindItem();
         // PressKeyToContinue.RunCommand();
 
-        AudioPlayer.PlayBackgroundMusic("./Audio/Audio/journal_read.wav");
-         AudioPlayer.PlayBackgroundMusic("./Audio/Audio/.wav");
-
         Console.Clear();
         HowToPlay.RunCommand();
         PressKeyToContinue.RunCommand();
+
+        PlayAudio.BackgroundMusic();
 
         while (running)
         {
@@ -72,35 +72,8 @@ class Program
 }
 
 /*
-    Finished:
-    Rug - Klar
-    Crowbar - Klar
-    Chessboard - Klar
-    Mirror - Klar
-    Painting - Klar
-    Window - Klar
-    Coat - Klar
-    Tapestry - Klar
-    Wardobe - Klar
-    Bed - Klar
-        / Scraper - Klar
-    Table - Klar
-        / Bulb - Klar
-    Safe - Klar
-        / Journal - Klar
-*/
-
-/*
-    Add audio effects
-    Change color on keywords when fully investigated
-
-
-    Cheat with key (If time allows)
-        1. Key hidden behind painting
-        2. Three keys instead of one
-            1. One behind painting.
-            2. One inside the shoe
-            3.
+    Sleep music
+    Secret sound for key
 */
 
 /*
@@ -108,4 +81,12 @@ class Program
     Makers:
     Music: “The Foyer”, from PlayOnLoop.com
     Licensed under Creative Commons by Attribution 4.0
+*/
+
+/*
+    Cheat with key (If time allows)
+        1. Three keys instead of one
+            1. One behind painting.
+            2. One inside the shoe
+            3.
 */

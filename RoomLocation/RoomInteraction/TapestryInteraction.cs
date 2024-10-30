@@ -4,6 +4,6 @@ public class TapestryInteraction
     {
         Dialogue.PrintTapestryCodeDescription();
 
-        PuzzleManager.PrintCode();      
+        PuzzleManager.PrintCode();
     }
 }

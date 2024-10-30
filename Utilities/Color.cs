@@ -16,12 +16,36 @@ public class Color
     }
     public static void TextYellow(string input)
     {
+        bool locationVisited = false;
+
+        if (!LocationManager.InvestigatedLocations.TryGetValue(input, out locationVisited)) { }
+
+        if (locationVisited)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.Write(input);
+            Console.ResetColor();
+            return;
+        }
+
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.Write(input);
         Console.ResetColor();
     }
     public static void TextCyan(string input)
     {
+        bool locationVisited = false;
+
+        if (!LocationManager.InvestigatedLocations.TryGetValue(input, out locationVisited)) { }
+
+        if (locationVisited)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.Write(input);
+            Console.ResetColor();
+            return;
+        }
+
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.Write(input);
         Console.ResetColor();

@@ -8,6 +8,7 @@ public class JournalInteraction
         if (canPickUp)
         {
             journal.PrintFindItem();
+            PlayAudio.Journal();
             Inventory.PLAYER_INVENTORY.AddItem(journal);
             SafeLocation.JournalAddedToInventory = true;
         }

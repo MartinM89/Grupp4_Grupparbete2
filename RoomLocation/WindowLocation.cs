@@ -8,6 +8,7 @@ class WindowLocation
         {
             Console.Clear();
             Dialogue.PrintWindowEmptyDescription();
+            LocationManager.Investigated("window");
             PressKeyToContinue.RunCommand();
         }
 
@@ -15,6 +16,7 @@ class WindowLocation
         {
             Console.Clear();
             Dialogue.PrintWindowDescription();
+            PlayAudio.Wind();
             string userChoice = EnterInput.RunCommand();
 
             switch (userChoice)

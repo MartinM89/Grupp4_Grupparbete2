@@ -7,7 +7,7 @@ class Dialogue
         Console.WriteLine("  As you step into the dimly lit room, a faint musty smell fills the air.");
         Console.Write("  Your feet press into a worn "); Color.TextCyan("rug"); Console.WriteLine(" as you step forward, eyes catching ");
         Console.Write("  the glint of a "); Color.TextYellow("crowbar"); Console.Write(" leaning against an aged "); Color.TextCyan("chessboard"); Console.WriteLine(". The dusty");
-        Color.TextCyan("  mirror"); Console.Write(" across the room reflects the crooked "); Color.TextCyan("painting"); Console.WriteLine(" on the wall.");
+        Console.Write("  "); Color.TextCyan("mirror"); Console.Write(" across the room reflects the crooked "); Color.TextCyan("painting"); Console.WriteLine(" on the wall.");
         Console.Write("  Near a clouded "); Color.TextCyan("window"); Console.Write(", a tattered "); Color.TextCyan("coat"); Console.WriteLine(" hangs forgotten. In the corner,");
         Console.Write("  a "); Color.TextCyan("safe"); Console.Write(" is nearly hidden beneath layers of grime. A weathered "); Color.TextCyan("tapestry\n");
         Console.Write("  drapes loosely on the wall, while a creaking "); Color.TextCyan("wardrobe"); Console.WriteLine(" stands beside the");

@@ -33,6 +33,7 @@ public class LampInteraction
                     {
                         Console.Clear();
                         DrawerInteraction.bulb.UseTool(); // You screw on the light bulb.
+                        PlayAudio.Lightbuld();
                         PressKeyToContinue.RunCommand();
                         Console.Clear();
                         lampshade.PrintFindItem(); // The lampshade seems to have burn marks in the shape of a letter and number.

@@ -17,9 +17,7 @@ public class TapestryLocation
             {
                 case "corner":
                     TapestryRipped = true;
-                    // Console.Clear();
-                    // Dialogue.PrintTapestryRippedDescription();
-                    // PressKeyToContinue.RunCommand();
+                    PlayAudio.TapestryRip();
                     continue;
 
                 case "inventory" or "inv":
@@ -52,6 +50,7 @@ public class TapestryLocation
             {
                 case "scraper":
                     RemoveTapestryInteraction.RunCommand(userChoice);
+                    PlayAudio.TapestryScraper();
                     PressKeyToContinue.RunCommand();
                     break;
 

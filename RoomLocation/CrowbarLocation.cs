@@ -15,6 +15,7 @@ public class CrowbarLocation
         else
         {
             crowbar.AlreadyInInventory();
+            LocationManager.Investigated("crowbar");
             PressKeyToContinue.RunCommand();
         }
     }

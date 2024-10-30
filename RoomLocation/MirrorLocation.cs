@@ -8,6 +8,7 @@ public class MirrorLocation
         {
             Console.Clear();
             Dialogue.PrintMirrorEmptyDescription();
+            LocationManager.Investigated("mirror");
             PressKeyToContinue.RunCommand();
         }
 

@@ -8,6 +8,7 @@ public class ChessboardLocation
         {
             Console.Clear();
             Dialogue.PrintChessboardEmptyDescription();
+            LocationManager.Investigated("chessboard");
             PressKeyToContinue.RunCommand();
         }
 
