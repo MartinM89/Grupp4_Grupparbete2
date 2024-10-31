@@ -23,6 +23,24 @@ public class PlayAudio
         soundPlayer.PlayLooping();
     }
 
+    public static void StopBackgroundMusic()
+    {
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return;
+        }
+
+        string ambientMusicFilePath = "./Audio/The Foyer.wav";
+
+        if (soundPlayer == null)
+        {
+            soundPlayer = new SoundPlayer();
+        }
+
+        soundPlayer.SoundLocation = ambientMusicFilePath;
+        soundPlayer.Stop();
+    }
+
     public static void Journal()
     {
         if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -178,6 +196,46 @@ public class PlayAudio
         }
 
         soundPlayer.SoundLocation = window_wind_audio;
+        soundPlayer.PlaySync();
+
+        BackgroundMusic();
+    }
+
+    public static void Dream()
+    {
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return;
+        }
+
+        string dream_sequence_audio = "./Audio/Audio/dream_sequence.wav";
+
+        if (soundPlayer == null)
+        {
+            soundPlayer = new SoundPlayer();
+        }
+
+        soundPlayer.SoundLocation = dream_sequence_audio;
+        soundPlayer.PlaySync();
+
+        BackgroundMusic();
+    }
+
+    public static void Secret()
+    {
+        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        {
+            return;
+        }
+
+        string find_secret_audio = "./Audio/Audio/find_secret.wav";
+
+        if (soundPlayer == null)
+        {
+            soundPlayer = new SoundPlayer();
+        }
+
+        soundPlayer.SoundLocation = find_secret_audio;
         soundPlayer.PlaySync();
 
         BackgroundMusic();

@@ -24,6 +24,7 @@ class KeypadInteraction
             else if (userCode.Equals(textCode))
             {
                 Highscore.Execute();
+                EndCredits.RunCommand();
                 return;
             }
 

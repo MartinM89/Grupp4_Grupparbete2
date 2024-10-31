@@ -267,7 +267,7 @@ public class Crowbar : Tool
 }
 public class Scraper : Tool
 {
-    public Scraper() : base("Scraper", "A rusty, flat tool, perfect for scraping away layers of dirt or grime.")
+    public Scraper() : base("Scraper", "A rusty, flat tool, perfect for scraping away layers of dirt.")
     {
     }
 
@@ -337,7 +337,7 @@ public class Key : Tool
     {
         Console.WriteLine("Narrator:");
         Console.WriteLine("  You find a key hidden between the painting and its back. The old man");
-        Console.WriteLine("  must've hidden it here a long time ago.");
+        Console.WriteLine("  must've hidden it here a long time ago.\n");
     }
 }
 #endregion

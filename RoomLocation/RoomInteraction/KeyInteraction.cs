@@ -10,6 +10,7 @@ public class KeyInteraction
         {
             Console.Clear();
             key.PrintFindItem();
+            PlayAudio.Secret();
             Inventory.PLAYER_INVENTORY.AddTool(key);
             PaintingLocation.KeyAddedToInventory = true;
         }
@@ -29,6 +30,7 @@ public class KeyInteraction
         Console.Clear();
         key.UseTool();
         Highscore.Execute();
+        EndCredits.RunCommand();
         return;
     }
 }

@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 class Dialogue
 {
     #region MAIN DIALOGUE
@@ -19,14 +21,16 @@ class Dialogue
     public static void PrintRugDescription()
     {
         Console.WriteLine("Narrator:");
-        Console.WriteLine("  You step onto a faded rug, firmly glued to the floor. The center is");
-        Console.Write("  threadbare, and cutting around it with a "); Color.TextYellow("knife"); Console.Write(" might help lift it.\n");
+        Console.WriteLine("  You step further onto the faded rug, firmly glued to the floor. The");
+        Console.Write("   center is threadbare, and cutting around it with a "); Color.TextYellow("knife"); Console.WriteLine(" might help");
+        Console.WriteLine("  lift it.");
     }
 
     public static void PrintRugEmptyDescription()
     {
         Console.WriteLine("Narrator:");
-        Console.WriteLine("  The rug has a hole at its center, there is no longer a note hidden here.");
+        Console.WriteLine("  The rug has a hole at its center, you can no longer find a note hidden");
+        Console.WriteLine("  here.");
     }
     #endregion
 
@@ -174,22 +178,53 @@ class Dialogue
 
     public static void PrintBedSleepDescription()
     {
-        Console.WriteLine("Narrator:");
-        Console.WriteLine("  As you close your eyes, sleep quickly takes over. In the darkness, a");
-        Console.WriteLine("  faint image starts to form, pulling you deeper into a dream.\n");
+        // Stopwatch stopwatch = new Stopwatch();
+        // stopwatch.Start();
 
-        Console.WriteLine("  You see the old man, his back hunched as he works with steady hands,");
-        Console.WriteLine("  carefully hanging the tapestry that now adorns the walls. His face is");
-        Console.WriteLine("  tired and fatigued, but his expression is focused. He steps back,");
-        Console.WriteLine("  inspecting his work. He mutters to himself, something about \"hiding");
-        Console.WriteLine("  things where only the patient will find them.\"\n");
+        string lineOne = "Narrator:\n";
+        string lineTwo = "  As you close your eyes, sleep quickly takes over. In the darkness, a\n";
+        string lineThree = "  faint image starts to form, pulling you deeper into a dream.\n";
 
-        Console.WriteLine("  The room feels warmer in the dream, the old man wiping sweat from his");
-        Console.WriteLine("  brow. He reaches into his coat pocket, pulling out a worn scraper.");
-        Console.WriteLine("  Slowly, he begins to smooth the edges of the tapestry.\n");
+        string lineFour = "  You see the old man, his back hunched as he works with steady hands,\n";
+        string lineFive = "  carefully hanging the tapestry that now adorns the walls. His face is\n";
+        string lineSix = "  tired and fatigued, but his expression is focused. He steps back,\n";
+        string lineSeven = "  inspecting his work. He mutters to himself, something about \"hiding\n";
+        string lineEight = "  things where only the patient will find them.\"\n\n";
 
-        Console.WriteLine("  Then, the scene fades. His figure blurs into shadow, leaving only the");
-        Console.WriteLine("  image of the tapestry swaying slightly on the walls.");
+        string lineNine = "  The room feels warmer in the dream, the old man wiping sweat from his\n";
+        string lineTen = "  brow. He reaches into his coat pocket, pulling out a worn scraper.\n";
+        string lineEleven = "  Slowly, he begins to smooth the edges of the tapestry.\n\n";
+
+        string lineTwelve = "  Then, the scene fades. His figure blurs into shadow, leaving only the\n";
+        string lineThirteen = "  image of the tapestry swaying slightly on the walls.\n";
+
+        PrintByCharacter.RunCommand(lineOne); // Narrator:
+        PrintByCharacter.RunCommand(lineTwo); // As you close your eyes, sleep quickly takes over. In the darkness, a
+        PrintByCharacter.RunCommand(lineThree); // faint image starts to form, pulling you deeper into a dream.
+
+        PrintByCharacter.RunCommand(lineFour); // You see the old man, his back hunched as he works with steady hands,
+        PrintByCharacter.RunCommand(lineFive); // carefully hanging the tapestry that now adorns the walls. His face is
+        PrintByCharacter.RunCommand(lineSix); // tired and fatigued, but his expression is focused. He steps back,
+        PrintByCharacter.RunCommand(lineSeven); // inspecting his work. He mutters to himself, something about \"hiding
+        PrintByCharacter.RunCommand(lineEight); // things where only the patient will find them.
+
+        PrintByCharacter.RunCommand(lineNine); // The room feels warmer in the dream, the old man wiping sweat from his
+        PrintByCharacter.RunCommand(lineTen); // brow. He reaches into his coat pocket, pulling out a worn scraper.
+        PrintByCharacter.RunCommand(lineEleven); // Slowly, he begins to smooth the edges of the tapestry.
+
+        PrintByCharacter.RunCommand(lineTwelve); // Then, the scene fades. His figure blurs into shadow, leaving only the
+        PrintByCharacter.RunCommand(lineThirteen); // image of the tapestry swaying slightly on the walls.
+
+        // stopwatch.Stop();
+        // TimeSpan ts = stopwatch.Elapsed;
+
+        // string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}:{3:00}",
+        //     ts.Hours,
+        //     ts.Minutes,
+        //     ts.Seconds,
+        //     ts.Milliseconds / 10);
+
+        // Console.WriteLine($"\nRuntime {elapsedTime}");
     }
 
     public static void PrintBedWakeUpDescription()

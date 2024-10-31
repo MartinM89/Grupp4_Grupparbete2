@@ -41,6 +41,8 @@ class Program
 
     static void Main(string[] args)
     {
+        Console.SetWindowSize(74, 23);
+
         Highscore.RunCommand();
         PuzzleManager.RandomizeSafeCode();
 
@@ -72,21 +74,20 @@ class Program
 }
 
 /*
-    Sleep music
-    Secret sound for key
-*/
-
-/*
-    End Credits:
-    Makers:
-    Music: “The Foyer”, from PlayOnLoop.com
-    Licensed under Creative Commons by Attribution 4.0
-*/
-
-/*
     Cheat with key (If time allows)
         1. Three keys instead of one
             1. One behind painting.
             2. One inside the shoe
             3.
+*/
+
+
+/*
+    Hur vi ska redovisa
+    Vad vi ska redivisa
+    Vem ska redovisa vad
+    Testa ljud på bluetooth speaker
+
+    Doll/Shoes TEXT
+    Crowbar = RED
 */
