@@ -67,7 +67,7 @@ public class Highscore
 
         Highscore.highscoreList.Sort((time1, time2) => time1.Time.CompareTo(time2.Time));
 
-        if (Highscore.highscoreList.Count == 11)
+        if (Highscore.highscoreList.Count.Equals(11))
         {
             Highscore.highscoreList.RemoveRange(10, 1);
         }

@@ -1,5 +1,5 @@
 
-public class Inventory // Bluprint
+public class Inventory
 {
     public static Letter letter = new Letter();
     private List<Item> items = new List<Item>() { letter };
@@ -62,12 +62,12 @@ public class Inventory // Bluprint
 
     public void PrintInventory() // Fixa
     {
-        if (items.Count != 0 || tools.Count != 0)
+        if (!items.Count.Equals(0) || !tools.Count.Equals(0))
         {
             Console.WriteLine("Items:");
             foreach (Item item in items)
             {
-                if (items.Count == 0)
+                if (items.Count.Equals(0))
                 {
                     Console.WriteLine("Your have no items.");
                 }
@@ -76,16 +76,12 @@ public class Inventory // Bluprint
             Console.WriteLine("\nTools:");
             foreach (Tool tool in tools)
             {
-                if (tools.Count == 0)
+                if (tools.Count.Equals(0))
                 {
                     Console.WriteLine("You have no tools.");
                 }
                 Console.WriteLine($"{tool.Name}: {tool.Description}");
             }
-        }
-        else
-        {
-            Console.WriteLine("There's nothing in your inventory.");
         }
     }
 }

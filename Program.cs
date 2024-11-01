@@ -41,20 +41,20 @@ class Program
 
     static void Main(string[] args)
     {
-        Console.SetWindowSize(74, 23);
+        // Console.SetWindowSize(74, 23);
 
         Highscore.RunCommand();
         PuzzleManager.RandomizeSafeCode();
 
-        // Console.Clear();
-        // Inventory.letter.PrintFindItem();
-        // PressKeyToContinue.RunCommand();
+        Console.Clear();
+        Inventory.letter.PrintFindItem();
+        PressKeyToContinue.RunCommand();
 
         Console.Clear();
         HowToPlay.RunCommand();
         PressKeyToContinue.RunCommand();
 
-        PlayAudio.BackgroundMusic();
+        PlayAudioS.PlayBackgroundMusic();
 
         while (running)
         {
@@ -90,4 +90,27 @@ class Program
 
     Doll/Shoes TEXT
     Crowbar = RED
+*/
+
+
+/*
+    Print Character // Tony
+    PressKeyToContinue
+
+    Audio // Tony
+
+    Enter Input // Jimmy
+    Invalid Input
+
+    Color/Location Manager // Martin
+
+    Item // Tony
+    Inventory
+
+    Location Chessboard // Jimmy
+    Interaction Queen
+
+    Highscore // Jimmy
+
+    End Credits // Martin
 */

@@ -40,7 +40,7 @@ public class Color
 
         if (locationVisited)
         {
-            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.Write(input);
             Console.ResetColor();
             return;

@@ -158,7 +158,6 @@ class Dialogue
     }
     #endregion
 
-    // animate text for dream
     #region BED DIALOGUE
     public static void PrintBedDescription()
     {
@@ -309,7 +308,6 @@ class Dialogue
     }
     #endregion
 
-    // animate text for win message
     #region WIN DIALOGUE
     public static void PrintYouWin()
     {
@@ -318,117 +316,36 @@ class Dialogue
         // Console.WriteLine("  What a journey it has been. But you finally find the ring.");
         // Console.WriteLine("  You retrieve the ring and give it to the family to recieve your pay check.");
 
-        Console.WriteLine("Narrator:");
-        Console.WriteLine("  As you open the safe, your heart races with anticipation. Inside, you");
-        Console.WriteLine("  discover two rings—one belonging to Henry and the other a delicate band");
-        Console.WriteLine("  worn by his beloved wife. Nestled beside the rings is a faded");
-        Console.WriteLine("  photograph capturing a moment of joy, showing the young couple in their");
-        Console.WriteLine("  prime, their faces filled with happiness.\n");
+        string lineOne = "Narrator:\n";
+        string lineTwo = "  As you open the safe, your heart races with anticipation. Inside, you\n";
+        string lineThree = "  discover two rings—one belonging to Henry and the other a delicate band\n";
+        string lineFour = "  worn by his beloved wife. Nestled beside the rings is a faded\n";
+        string lineFive = "  photograph capturing a moment of joy, showing the young couple in their\n";
+        string lineSix = "  prime, their faces filled with happiness.\n\n";
 
-        Console.WriteLine("  But amidst these unique treasures, your eyes are drawn to a sealed");
-        Console.WriteLine("  envelope, similar to the one that guided you here. Its edges are worn,");
-        Console.WriteLine("  and the handwriting on the front is unmistakably Henry's. You feel a");
-        Console.WriteLine("  sense of excitement; what other secrets and mysteries does Henry hold?");
-        Console.WriteLine("  As you take the envelope in hand, you realize this journey may have");
-        Console.WriteLine("  just begun, and the real adventure might still await you beyond this");
-        Console.WriteLine("  room.");
+        string lineSeven = "  But amidst these unique treasures, your eyes are drawn to a sealed\n";
+        string lineEight = "  envelope, similar to the one that guided you here. Its edges are worn,\n";
+        string lineNine = "  and the handwriting on the front is unmistakably Henry's. You feel a\n";
+        string lineTen = "  sense of excitement; what other secrets and mysteries does Henry hold?\n";
+        string lineEleven = "  As you take the envelope in hand, you realize this journey may have\n";
+        string lineTwelve = "  just begun, and the real adventure might still await you beyond this\n";
+        string lineThirteen = "  room.";
+
+        PrintByCharacter.RunCommand(lineOne);
+        PrintByCharacter.RunCommand(lineTwo);
+        PrintByCharacter.RunCommand(lineThree);
+        PrintByCharacter.RunCommand(lineFour);
+        PrintByCharacter.RunCommand(lineFive);
+        PrintByCharacter.RunCommand(lineSix);
+
+        PrintByCharacter.RunCommand(lineSeven);
+        PrintByCharacter.RunCommand(lineEight);
+        PrintByCharacter.RunCommand(lineNine);
+        PrintByCharacter.RunCommand(lineTen);
+        PrintByCharacter.RunCommand(lineEleven);
+        PrintByCharacter.RunCommand(lineTwelve);
+        PrintByCharacter.RunCommand(lineThirteen);
+
     }
     #endregion
-}
-
-public class DialogueFind // double check and remove
-{
-    public static void PrintLetter()
-    {
-        string lineOne = "Dear Reader,";
-        string lineTwo = "If you're holding this, it means you're curious. Good. I've left something";
-        string lineThree = "for those with the patience and sharp eyes to find it. There's a safe in";
-        string lineFour = "this room, and inside it, well... that's for you to discover. The code is";
-        string lineFive = "hidden among the things I've left behind. You'll have to piece it together.";
-
-        string lineSix = "I always believed that the best rewards come from a little hard work.";
-        string lineSeven = "Take your time, look closely, and don't rush. If you've made it this far,";
-        string lineEight = "you're already on the right track.\n";
-
-        string lineNine = "Best of luck,";
-        string lineTen = "~Henry";
-
-        PrintByCharacter.RunCommand(lineOne); // Dear Reader,
-        Console.WriteLine();
-        PrintByCharacter.RunCommand(lineTwo); // If you're holding this, it means you're curious. Good. I've left something
-        Console.WriteLine();
-        PrintByCharacter.RunCommand(lineThree); // for those with the patience and sharp eyes to find it. There's a safe in
-        Console.WriteLine();
-        PrintByCharacter.RunCommand(lineFour); // this room, and inside it, well... that's for you to discover. The code is
-        Console.WriteLine();
-        PrintByCharacter.RunCommand(lineFive); // hidden among the things I've left behind. You'll have to piece it together.
-        Console.WriteLine();
-        Console.WriteLine();
-        PrintByCharacter.RunCommand(lineSix); // I always believed that the best rewards come from a little hard work.
-        Console.WriteLine();
-        PrintByCharacter.RunCommand(lineSeven); // Take your time, look closely, and don't rush. If you've made it this far,
-        Console.WriteLine();
-        PrintByCharacter.RunCommand(lineEight); // you're already on the right track.
-        Console.WriteLine();
-        Console.WriteLine();
-        PrintByCharacter.RunCommand(lineNine); // Best of luck,
-        Console.WriteLine();
-        PrintByCharacter.RunCommand(lineTen); // ~Henry
-        Console.WriteLine();
-
-        // Console.WriteLine("Dear Reader,");
-        // Console.WriteLine("If you're holding this, it means you're curious. Good. I've left something");
-        // Console.WriteLine("for those with the patience and sharp eyes to find it. There's a safe in");
-        // Console.WriteLine("this room, and inside it, well... that's for you to discover. The code is");
-        // Console.WriteLine("hidden among the things I've left behind. You'll have to piece it together.\n");
-
-        // Console.WriteLine("I always believed that the best rewards come from a little hard work.");
-        // Console.WriteLine("Take your time, look closely, and don't rush. If you've made it this far,");
-        // Console.WriteLine("you're already on the right track.\n");
-
-        // Console.WriteLine("Best of luck,");
-        // Console.WriteLine("~Henry");
-    }
-
-    public static void PrintPocketWatch()
-    {
-        Console.WriteLine("Narrator:");
-        Console.WriteLine("  An elegant, silver watch that has stopped ticking. Its chain is twisted,");
-        Console.WriteLine("  and the hands are frozen at an odd time.\n");
-    }
-
-    public static void PrintBusinessCard()
-    {
-        Console.WriteLine("Narrator:");
-        Console.WriteLine("  A yellowed card with the old man's face faintly visible. Only a “C” and ");
-        Console.WriteLine("  a “6” can be made out from his name and number.\n");
-    }
-
-    public static void PrintShoes()
-    {
-        Console.WriteLine("Narrator:");
-        Console.WriteLine("  A pair of worn leather shoes, scuffed from years of use. There's");
-        Console.WriteLine("  something off about their weight.\n");
-    }
-
-    public static void PrintDoll()
-    {
-        Console.WriteLine("Narrator:");
-        Console.WriteLine("  A small, porcelain doll with chipped paint and a cracked face. Its");
-        Console.WriteLine("  empty eyes seem to follow you.\n");
-    }
-
-    public static void PrintJournal()
-    {
-        Console.WriteLine("Narrator:");
-        Console.WriteLine("  A weathered journal, its pages yellowed with age. Inside, the old man's");
-        Console.WriteLine("  tales about life and cryptic notes hint at something deeper. Many pages");
-        Console.WriteLine("  are torn out.\n");
-    }
-
-    public static void PrintCrowbar()
-    {
-        Console.WriteLine("Narrator:");
-        Console.WriteLine("  A solid metal bar. It feels like it could pry open just about anything.");
-    }
 }

@@ -1,27 +1,29 @@
+using System.Diagnostics;
 using System.Media;
 using System.Runtime.InteropServices;
+using LibVLCSharp.Shared;
 
 public class PlayAudio
 {
     private static SoundPlayer? soundPlayer;
 
-    public static void BackgroundMusic()
-    {
-        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-        {
-            return;
-        }
+    // public static void BackgroundMusic()
+    // {
+    //     if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+    //     {
+    //         return;
+    //     }
 
-        string ambientMusicFilePath = "./Audio/The Foyer.wav";
+    //     string ambientMusicFilePath = "./Audio/The Foyer (LOUD).wav";
 
-        if (soundPlayer == null)
-        {
-            soundPlayer = new SoundPlayer();
-        }
+    //     if (soundPlayer == null)
+    //     {
+    //         soundPlayer = new SoundPlayer();
+    //     }
 
-        soundPlayer.SoundLocation = ambientMusicFilePath;
-        soundPlayer.PlayLooping();
-    }
+    //     soundPlayer.SoundLocation = ambientMusicFilePath;
+    //     soundPlayer.PlayLooping();
+    // }
 
     public static void StopBackgroundMusic()
     {
@@ -58,7 +60,7 @@ public class PlayAudio
         soundPlayer.SoundLocation = journal_read_audio;
         soundPlayer.PlaySync();
 
-        BackgroundMusic();
+        // BackgroundMusic();
     }
 
     public static void Lightbuld()
@@ -78,7 +80,7 @@ public class PlayAudio
         soundPlayer.SoundLocation = lightbulb_screw_audio;
         soundPlayer.PlaySync();
 
-        BackgroundMusic();
+        // BackgroundMusic();
     }
 
     public static void Mirror()
@@ -98,7 +100,7 @@ public class PlayAudio
         soundPlayer.SoundLocation = mirror_move_audio;
         soundPlayer.PlaySync();
 
-        BackgroundMusic();
+        // BackgroundMusic();
     }
 
     public static void RugCut()
@@ -118,7 +120,7 @@ public class PlayAudio
         soundPlayer.SoundLocation = rug_cut_audio;
         soundPlayer.PlaySync();
 
-        BackgroundMusic();
+        // BackgroundMusic();
     }
 
     public static void TapestryRip()
@@ -138,7 +140,7 @@ public class PlayAudio
         soundPlayer.SoundLocation = tapestry_rip_audio;
         soundPlayer.PlaySync();
 
-        BackgroundMusic();
+        // BackgroundMusic();
     }
 
     public static void TapestryScraper()
@@ -158,7 +160,7 @@ public class PlayAudio
         soundPlayer.SoundLocation = tapestry_scraper_rip_audio;
         soundPlayer.PlaySync();
 
-        BackgroundMusic();
+        // BackgroundMusic();
     }
 
     public static void WardrobeCrowbar()
@@ -178,7 +180,7 @@ public class PlayAudio
         soundPlayer.SoundLocation = wardrobe_crowbar_creak_audio;
         soundPlayer.PlaySync();
 
-        BackgroundMusic();
+        // BackgroundMusic();
     }
 
     public static void Wind()
@@ -198,7 +200,7 @@ public class PlayAudio
         soundPlayer.SoundLocation = window_wind_audio;
         soundPlayer.PlaySync();
 
-        BackgroundMusic();
+        // BackgroundMusic();
     }
 
     public static void Dream()
@@ -218,7 +220,7 @@ public class PlayAudio
         soundPlayer.SoundLocation = dream_sequence_audio;
         soundPlayer.PlaySync();
 
-        BackgroundMusic();
+        // BackgroundMusic();
     }
 
     public static void Secret()
@@ -238,7 +240,7 @@ public class PlayAudio
         soundPlayer.SoundLocation = find_secret_audio;
         soundPlayer.PlaySync();
 
-        BackgroundMusic();
+        // BackgroundMusic();
     }
 }
 
@@ -265,39 +267,31 @@ public class PlayAudio
 
 
 
-// using LibVLCSharp.Shared;
 
-// public class PlayAudio
-// {
-//     public static void PlayBackgroundMusic()
-//     {
-//         // Initialize libVLC with the correct path to native libraries
-//         Core.Initialize();
 
-//         LibVLC libVLC = new LibVLC();
-//         MediaPlayer mediaPlayer = new MediaPlayer(libVLC);
+public class PlayAudioS
+{
+    // public static LibVLC libVLC = new LibVLC();
+    public static void PlayBackgroundMusic()
+    {
+        // Initialize libVLC with the correct path to native libraries
+        Core.Initialize();
 
-//         string ambientMusicFilePath = "./Audio/The Foyer.wav";
-//         string journal_read_audio = "./Audio/Audio/journal_read.wav";
-//         string lightbulb_screw_audio = "./Audio/Audio/lightbulb_screw.wav";
-//         string mirror_move_audio = "./Audio/Audio/mirror_move.wav";
-//         string rug_cut_audio = "./Audio/Audio/rug_cut.wav";
-//         string tapestry_rip_audio = "./Audio/Audio/tapestry_rip.wav";
-//         string tapestry_scraper_rip_audio = "./Audio/Audio/tapestry_scraper_rip.wav";
-//         string wardrobe_crowbar_creak_audio = "./Audio/Audio/wardrobe_crowbar_creak.wav";
-//         string window_wind_audio = "./Audio/Audio/window_wind.wav";
+        LibVLC libVLC = new LibVLC();
+        MediaPlayer mediaPlayer = new MediaPlayer(libVLC);
 
-//         Media media = new Media(libVLC, journal_read_audio, FromType.FromPath);
+        string ambientMusicFilePath = "./Audio/The Foyer (LOUD).wav";
 
-//         mediaPlayer.Media = media;
-//         mediaPlayer.Volume = 100;
+        Media media = new Media(libVLC, ambientMusicFilePath, FromType.FromPath);
 
-//         mediaPlayer.Play();
+        mediaPlayer.Media = media;
+        mediaPlayer.Volume = 100;
 
-//         mediaPlayer.EndReached += (sender, e) =>
-//         {
-//             mediaPlayer.Stop();
-//             mediaPlayer.Play();
-//         };
-//     }
-// }
+        mediaPlayer.Play();
+
+        // mediaPlayer.EndReached += (sender, e) =>
+        // {
+        //     PlayBackgroundMusic();
+        // };
+    }
+}

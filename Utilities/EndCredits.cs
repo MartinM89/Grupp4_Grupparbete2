@@ -51,27 +51,27 @@ public class EndCredits
         int terminalWidth = Console.WindowWidth;
         int creditsHeight = credits.Count;
 
-            for (int i = 0; i < creditsHeight + terminalHeight; i++)
+        for (int i = 0; i < creditsHeight + terminalHeight; i++) // 40 + 23
+        {
+            Console.Clear();
+
+            for (int j = 0; j < terminalHeight; j++)
             {
-                Console.Clear();
+                int creditIndex = i + j - terminalHeight;
 
-                for (int j = 0; j < terminalHeight; j++)
+                if (creditIndex >= 0 && creditIndex < creditsHeight)
                 {
-                    int creditIndex = i + j - terminalHeight;
+                    string line = credits[creditIndex];
+                    //   66
+                    int centeredPosition = (terminalWidth - line.Length) / 2;  // (74 - 8) / 33
+                    if (centeredPosition < 0) centeredPosition = 0;
 
-                    if (creditIndex >= 0 && creditIndex < creditsHeight)
-                    {
-                        string line = credits[creditIndex];
-                                                                                    //   66
-                        int centeredPosition = (terminalWidth - line.Length) / 2;  // (74 - 8) / 33
-                        if (centeredPosition < 0) centeredPosition = 0;
-
-                        Console.SetCursorPosition(centeredPosition, j);
-                        Console.WriteLine(credits[creditIndex]);
-                    }
+                    Console.SetCursorPosition(centeredPosition, j);
+                    Console.WriteLine(credits[creditIndex]);
                 }
-                Thread.Sleep(250);
             }
+            Thread.Sleep(250);
+        }
 
         Console.SetCursorPosition((terminalWidth - 8) / 2, 10);
         Console.WriteLine("The End!");

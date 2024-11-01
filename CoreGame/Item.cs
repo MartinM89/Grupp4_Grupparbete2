@@ -30,32 +30,21 @@ public class Letter : Item
 
     public override void PrintFindItem()
     {
-        string lineOne = "Dear Reader,\n";
-        string lineTwo = "If you're holding this, it means you're curious. Good. I've left something\n";
-        string lineThree = "for those with the patience and sharp eyes to find it. There's a safe in\n";
-        string lineFour = "this room, and inside it, well... that's for you to discover. The code is\n";
-        string lineFive = "hidden among the things I've left behind. You'll have to piece it together.\n\n";
+        string letterText = "Dear Reader,\n\n" +
 
-        string lineSix = "I always believed that the best rewards come from a little hard work.\n";
-        string lineSeven = "Take your time, look closely, and don't rush. If you've made it this far,\n";
-        string lineEight = "you're already on the right track.\n\n";
+        "  If you're holding this, it means you're curious. Good. I've left something\n" +
+        "  for those with the patience and sharp eyes to find it. There's a safe in\n" +
+        "  this room, and inside it, well... that's for you to discover. The code is\n" +
+        "  hidden among the things I've left behind. You'll have to piece it together.\n\n" +
 
-        string lineNine = "Best of luck,\n";
-        string lineTen = "~Henry\n";
+        "  I always believed that the best rewards come from a little hard work.\n" +
+        "  Take your time, look closely, and don't rush. If you've made it this far,\n" +
+        "  you're already on the right track.\n\n" +
 
-        PrintByCharacter.RunCommand(lineOne); // Dear Reader,
-        PrintByCharacter.RunCommand(lineTwo); // If you're holding this, it means you're curious. Good. I've left something
-        PrintByCharacter.RunCommand(lineThree); // for those with the patience and sharp eyes to find it. There's a safe in
-        PrintByCharacter.RunCommand(lineFour); // this room, and inside it, well... that's for you to discover. The code is
-        PrintByCharacter.RunCommand(lineFive); // hidden among the things I've left behind. You'll have to piece it together.
+        "Best of luck,\n" +
+        "~Henry\n";
 
-        PrintByCharacter.RunCommand(lineSix); // I always believed that the best rewards come from a little hard work.
-        PrintByCharacter.RunCommand(lineSeven); // Take your time, look closely, and don't rush. If you've made it this far,
-        PrintByCharacter.RunCommand(lineEight); // you're already on the right track.
-
-        PrintByCharacter.RunCommand(lineNine); // Best of luck,
-        PrintByCharacter.RunCommand(lineTen); // ~Henry
-
+        PrintByCharacter.RunCommand(letterText);
     }
 }
 
