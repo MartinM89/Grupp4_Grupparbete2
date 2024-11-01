@@ -12,7 +12,7 @@ public class NoteInteraction
         {
             Console.Clear();
             KnifeInteraction.knife.UseTool();
-            PlayAudio.RugCut();
+            Audio.PlaySound("./Audio/Audio/rug_cut.wav");
 
             bool canPickUp = Inventory.PLAYER_INVENTORY.CheckDuplicateItem(note);
 

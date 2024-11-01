@@ -9,7 +9,7 @@ public class WalletInteraction
         {
             Console.Clear();
             wallet.PrintFindItem();
-            PlayAudio.Mirror();
+            Audio.PlaySound("./Audio/Audio/mirror_move.wav");
             Inventory.PLAYER_INVENTORY.AddItem(wallet);
             MirrorLocation.WalletAddedToInventory = true;
         }

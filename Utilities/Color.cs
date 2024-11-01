@@ -1,5 +1,3 @@
-using System.Net;
-
 public class Color
 {
     public static void TextGreen(string input)

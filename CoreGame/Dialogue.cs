@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 class Dialogue
 {
     #region MAIN DIALOGUE
@@ -177,53 +175,24 @@ class Dialogue
 
     public static void PrintBedSleepDescription()
     {
-        // Stopwatch stopwatch = new Stopwatch();
-        // stopwatch.Start();
+        string dreamText = "Narrator:\n" +
+        "  As you close your eyes, sleep quickly takes over. In the darkness, a\n" +
+        "  faint image starts to form, pulling you deeper into a dream.\n" +
 
-        string lineOne = "Narrator:\n";
-        string lineTwo = "  As you close your eyes, sleep quickly takes over. In the darkness, a\n";
-        string lineThree = "  faint image starts to form, pulling you deeper into a dream.\n";
+        "  You see the old man, his back hunched as he works with steady hands,\n" +
+        "  carefully hanging the tapestry that now adorns the walls. His face is\n" +
+        "  tired and fatigued, but his expression is focused. He steps back,\n" +
+        "  inspecting his work. He mutters to himself, something about \"hiding\n" +
+        "  things where only the patient will find them.\"\n\n" +
 
-        string lineFour = "  You see the old man, his back hunched as he works with steady hands,\n";
-        string lineFive = "  carefully hanging the tapestry that now adorns the walls. His face is\n";
-        string lineSix = "  tired and fatigued, but his expression is focused. He steps back,\n";
-        string lineSeven = "  inspecting his work. He mutters to himself, something about \"hiding\n";
-        string lineEight = "  things where only the patient will find them.\"\n\n";
+        "  The room feels warmer in the dream, the old man wiping sweat from his\n" +
+        "  brow. He reaches into his coat pocket, pulling out a worn scraper.\n" +
+        "  Slowly, he begins to smooth the edges of the tapestry.\n\n" +
 
-        string lineNine = "  The room feels warmer in the dream, the old man wiping sweat from his\n";
-        string lineTen = "  brow. He reaches into his coat pocket, pulling out a worn scraper.\n";
-        string lineEleven = "  Slowly, he begins to smooth the edges of the tapestry.\n\n";
+        "  Then, the scene fades. His figure blurs into shadow, leaving only the\n" +
+        "  image of the tapestry swaying slightly on the walls.\n";
 
-        string lineTwelve = "  Then, the scene fades. His figure blurs into shadow, leaving only the\n";
-        string lineThirteen = "  image of the tapestry swaying slightly on the walls.\n";
-
-        PrintByCharacter.RunCommand(lineOne); // Narrator:
-        PrintByCharacter.RunCommand(lineTwo); // As you close your eyes, sleep quickly takes over. In the darkness, a
-        PrintByCharacter.RunCommand(lineThree); // faint image starts to form, pulling you deeper into a dream.
-
-        PrintByCharacter.RunCommand(lineFour); // You see the old man, his back hunched as he works with steady hands,
-        PrintByCharacter.RunCommand(lineFive); // carefully hanging the tapestry that now adorns the walls. His face is
-        PrintByCharacter.RunCommand(lineSix); // tired and fatigued, but his expression is focused. He steps back,
-        PrintByCharacter.RunCommand(lineSeven); // inspecting his work. He mutters to himself, something about \"hiding
-        PrintByCharacter.RunCommand(lineEight); // things where only the patient will find them.
-
-        PrintByCharacter.RunCommand(lineNine); // The room feels warmer in the dream, the old man wiping sweat from his
-        PrintByCharacter.RunCommand(lineTen); // brow. He reaches into his coat pocket, pulling out a worn scraper.
-        PrintByCharacter.RunCommand(lineEleven); // Slowly, he begins to smooth the edges of the tapestry.
-
-        PrintByCharacter.RunCommand(lineTwelve); // Then, the scene fades. His figure blurs into shadow, leaving only the
-        PrintByCharacter.RunCommand(lineThirteen); // image of the tapestry swaying slightly on the walls.
-
-        // stopwatch.Stop();
-        // TimeSpan ts = stopwatch.Elapsed;
-
-        // string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}:{3:00}",
-        //     ts.Hours,
-        //     ts.Minutes,
-        //     ts.Seconds,
-        //     ts.Milliseconds / 10);
-
-        // Console.WriteLine($"\nRuntime {elapsedTime}");
+        PrintByCharacter.RunCommand(dreamText);
     }
 
     public static void PrintBedWakeUpDescription()
@@ -316,36 +285,22 @@ class Dialogue
         // Console.WriteLine("  What a journey it has been. But you finally find the ring.");
         // Console.WriteLine("  You retrieve the ring and give it to the family to recieve your pay check.");
 
-        string lineOne = "Narrator:\n";
-        string lineTwo = "  As you open the safe, your heart races with anticipation. Inside, you\n";
-        string lineThree = "  discover two rings—one belonging to Henry and the other a delicate band\n";
-        string lineFour = "  worn by his beloved wife. Nestled beside the rings is a faded\n";
-        string lineFive = "  photograph capturing a moment of joy, showing the young couple in their\n";
-        string lineSix = "  prime, their faces filled with happiness.\n\n";
+        string winText = "Narrator:\n" +
+        "  As you open the safe, your heart races with anticipation. Inside, you\n" +
+        "  discover two rings—one belonging to Henry and the other a delicate band\n" +
+        "  worn by his beloved wife. Nestled beside the rings is a faded\n" +
+        "  photograph capturing a moment of joy, showing the young couple in their\n" +
+        "  prime, their faces filled with happiness.\n\n" +
 
-        string lineSeven = "  But amidst these unique treasures, your eyes are drawn to a sealed\n";
-        string lineEight = "  envelope, similar to the one that guided you here. Its edges are worn,\n";
-        string lineNine = "  and the handwriting on the front is unmistakably Henry's. You feel a\n";
-        string lineTen = "  sense of excitement; what other secrets and mysteries does Henry hold?\n";
-        string lineEleven = "  As you take the envelope in hand, you realize this journey may have\n";
-        string lineTwelve = "  just begun, and the real adventure might still await you beyond this\n";
-        string lineThirteen = "  room.";
+        "  But amidst these unique treasures, your eyes are drawn to a sealed\n" +
+        "  envelope, similar to the one that guided you here. Its edges are worn,\n" +
+        "  and the handwriting on the front is unmistakably Henry's. You feel a\n" +
+        "  sense of excitement; what other secrets and mysteries does Henry hold?\n" +
+        "  As you take the envelope in hand, you realize this journey may have\n" +
+        "  just begun, and the real adventure might still await you beyond this\n" +
+        "  room.";
 
-        PrintByCharacter.RunCommand(lineOne);
-        PrintByCharacter.RunCommand(lineTwo);
-        PrintByCharacter.RunCommand(lineThree);
-        PrintByCharacter.RunCommand(lineFour);
-        PrintByCharacter.RunCommand(lineFive);
-        PrintByCharacter.RunCommand(lineSix);
-
-        PrintByCharacter.RunCommand(lineSeven);
-        PrintByCharacter.RunCommand(lineEight);
-        PrintByCharacter.RunCommand(lineNine);
-        PrintByCharacter.RunCommand(lineTen);
-        PrintByCharacter.RunCommand(lineEleven);
-        PrintByCharacter.RunCommand(lineTwelve);
-        PrintByCharacter.RunCommand(lineThirteen);
-
+        PrintByCharacter.RunCommand(winText);
     }
     #endregion
 }

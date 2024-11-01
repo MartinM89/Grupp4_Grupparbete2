@@ -10,7 +10,7 @@ public class KeyInteraction
         {
             Console.Clear();
             key.PrintFindItem();
-            PlayAudio.Secret();
+            Audio.PlaySound("./Audio/Audio/find_secret.wav");
             Inventory.PLAYER_INVENTORY.AddTool(key);
             PaintingLocation.KeyAddedToInventory = true;
         }

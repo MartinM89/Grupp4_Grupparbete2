@@ -26,13 +26,8 @@ public class BedLocation
                 case "nap":
                     Console.Clear();
 
-                    Thread audioThread = new Thread(PlayAudio.Dream);
-                    Thread textThread = new Thread(Dialogue.PrintBedSleepDescription);
-
-                    audioThread.Start();
-                    textThread.Start();
-
-                    Thread.Sleep(40620);
+                    Audio.PlaySound("./Audio/Audio/dream_sequence.wav");
+                    Dialogue.PrintBedSleepDescription();
 
                     PressKeyToContinue.RunCommand();
 

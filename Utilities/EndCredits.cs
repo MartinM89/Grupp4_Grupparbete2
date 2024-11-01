@@ -2,7 +2,7 @@ public class EndCredits
 {
     public static void RunCommand()
     {
-        PlayAudio.StopBackgroundMusic();
+        Audio.StopBackgroundMusic();
         Console.SetWindowSize(74, 23);
 
         List<string> credits = new List<string>

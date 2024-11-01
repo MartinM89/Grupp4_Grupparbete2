@@ -41,8 +41,6 @@ class Program
 
     static void Main(string[] args)
     {
-        // Console.SetWindowSize(74, 23);
-
         Highscore.RunCommand();
         PuzzleManager.RandomizeSafeCode();
 
@@ -54,7 +52,7 @@ class Program
         HowToPlay.RunCommand();
         PressKeyToContinue.RunCommand();
 
-        PlayAudioS.PlayBackgroundMusic();
+        Audio.BackgroundMusic();
 
         while (running)
         {

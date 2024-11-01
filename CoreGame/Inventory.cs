@@ -25,7 +25,7 @@ public class Inventory
         {
             if (item.Equals(i))
             {
-                Console.WriteLine($"You already have the {item.Name}."); // Ta en titt
+                Console.WriteLine($"You already have the {item.Name}."); // Remove, fix shoes and doll first.
                 PressKeyToContinue.RunCommand();
                 return false;
             }
@@ -60,28 +60,30 @@ public class Inventory
         return null!;
     }
 
-    public void PrintInventory() // Fixa
+    public void PrintInventory()
     {
-        if (!items.Count.Equals(0) || !tools.Count.Equals(0))
+        if (items.Count.Equals(0) || tools.Count.Equals(0)) // Not required
         {
-            Console.WriteLine("Items:");
-            foreach (Item item in items)
+            return;
+        }
+
+        Console.WriteLine("Items:");
+        foreach (Item item in items)
+        {
+            if (items.Count.Equals(0))
             {
-                if (items.Count.Equals(0))
-                {
-                    Console.WriteLine("Your have no items.");
-                }
-                Console.WriteLine($"{item.Name}: {item.LetterNumber}");
+                Console.WriteLine("Your have no items.");
             }
-            Console.WriteLine("\nTools:");
-            foreach (Tool tool in tools)
+            Console.WriteLine($"{item.Name}: {item.LetterNumber}");
+        }
+        Console.WriteLine("\nTools:");
+        foreach (Tool tool in tools)
+        {
+            if (tools.Count.Equals(0))
             {
-                if (tools.Count.Equals(0))
-                {
-                    Console.WriteLine("You have no tools.");
-                }
-                Console.WriteLine($"{tool.Name}: {tool.Description}");
+                Console.WriteLine("You have no tools.");
             }
+            Console.WriteLine($"{tool.Name}: {tool.Description}");
         }
     }
 }

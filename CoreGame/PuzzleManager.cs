@@ -43,15 +43,6 @@ public class PuzzleManager
         Console.WriteLine();
     }
 
-    public static void PrintNumberCode() // Debugging
-    {
-        foreach (int i in passwordNum)
-        {
-            Console.Write($"{i} ");
-        }
-        Console.WriteLine();
-    }
-
     public static string ConvertCodeToString()
     {
         string textCode = "";
@@ -62,4 +53,14 @@ public class PuzzleManager
         }
         return textCode;
     }
+
+    public static void PrintNumberCode() // Debugging
+    {
+        foreach (int i in passwordNum)
+        {
+            Console.Write($"{i} ");
+        }
+        Console.WriteLine();
+    }
+
 }
