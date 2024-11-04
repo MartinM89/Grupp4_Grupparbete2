@@ -5,9 +5,6 @@ public class NoteInteraction
     {
         string toolIsInInventory = Inventory.PLAYER_INVENTORY.CheckToolInInventory(userChoice);
 
-        // Console.WriteLine($"Test Knife Bool. User Choice: {userChoice} | Inventory: {toolIsInInventory}"); // debugging
-        // PressKeyToContinue.RunCommand(); // debugging
-
         if (userChoice.Equals(toolIsInInventory))
         {
             Console.Clear();

@@ -1,7 +1,7 @@
 class Dialogue
 {
     #region MAIN DIALOGUE
-    public static void PrintRoomDescription() // 73
+    public static void PrintRoomDescription()
     {
         Console.WriteLine("Narrator:");
         Console.WriteLine("  As you step into the dimly lit room, a faint musty smell fills the air.");
@@ -118,6 +118,19 @@ class Dialogue
         Console.WriteLine("  The coat still hangs barely touched, but its pockets are now empty, the");
         Console.WriteLine("  fabric remains still, gathering dust in the quiet room.");
     }
+
+    public static void PrintEmptyPocketWatchDescription()
+    {
+        Console.WriteLine("Narrator:");
+        Console.WriteLine("  The coat pocket feels lighter now, there is nothing left inside it.");
+    }
+
+    public static void PrintEmptyBusinessCardDescription()
+    {
+        Console.WriteLine("Narrator:");
+        Console.WriteLine("  The pocket where the card was tucked is now just an empty fold of");
+        Console.WriteLine("  fabric.");
+    }
     #endregion
 
     #region TABLE DIALOGUE
@@ -153,6 +166,20 @@ class Dialogue
         Console.WriteLine("  With the bulb removed, the drawer holds only a few random items—bits");
         Console.WriteLine("  of string, paperclips, and a photograph. Nothing of particular value");
         Console.WriteLine("  remains, just the quiet clutter of forgotten things.");
+    }
+
+    public static void PrintLampDescription()
+    {
+        Console.WriteLine("Narrator:");
+        Console.WriteLine("  As you inspect the lamp closer you notice that the lampshade has been");
+        Console.WriteLine("  tampered with. You wonder why but let it go for now. Maybe there is a");
+        Color.TextYellow("  bulb"); Console.WriteLine(" around to insert.");
+    }
+
+    public static void PrintEmptyLampDescription()
+    {
+        Console.WriteLine("Narrator:");
+        Console.WriteLine("  The lamp is glowing faintly from the newly inserted bulb.");
     }
     #endregion
 
@@ -226,6 +253,19 @@ class Dialogue
         Console.Write("  of "); Color.TextGreen("shoes"); Console.Write(" sits neatly on the bottom, while a "); Color.TextGreen("doll"); Console.WriteLine(" leans against the back");
         Console.WriteLine("  wall, its glassy eyes staring ahead, untouched for years");
     }
+
+    public static void PrintEmptyDollDescription()
+    {
+        Console.WriteLine("Narrator:");
+        Console.WriteLine("  The spot where the doll once rested is now just an empty corner.");
+    }
+
+    public static void PrintEmptyShoesDescription()
+    {
+        Console.WriteLine("Narrator:");
+        Console.WriteLine("  A fine layer of dust begins to settle where the shoes once stood,");
+        Console.WriteLine("  leaving behind only the imprint of worn soles.");
+    }
     #endregion
 
     #region TAPESTRY DIALOGUE
@@ -280,11 +320,6 @@ class Dialogue
     #region WIN DIALOGUE
     public static void PrintYouWin()
     {
-        // Console.WriteLine("Narrator:");
-        // Console.WriteLine("  You find the ring of fortune, you think for your self:");
-        // Console.WriteLine("  What a journey it has been. But you finally find the ring.");
-        // Console.WriteLine("  You retrieve the ring and give it to the family to recieve your pay check.");
-
         string winText = "Narrator:\n" +
         "  As you open the safe, your heart races with anticipation. Inside, you\n" +
         "  discover two rings—one belonging to Henry and the other a delicate band\n" +
@@ -298,7 +333,7 @@ class Dialogue
         "  sense of excitement; what other secrets and mysteries does Henry hold?\n" +
         "  As you take the envelope in hand, you realize this journey may have\n" +
         "  just begun, and the real adventure might still await you beyond this\n" +
-        "  room.";
+        "  room.\n";
 
         PrintByCharacter.RunCommand(winText);
     }

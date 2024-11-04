@@ -13,7 +13,6 @@ public class RemoveTapestryInteraction
         else
         {
             Console.Clear();
-            // Console.WriteLine("You need a scraper.");
             ScraperInteraction.scraper.MissingTool();
         }
     }

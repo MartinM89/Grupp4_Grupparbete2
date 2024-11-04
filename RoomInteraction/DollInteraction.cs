@@ -5,6 +5,12 @@ public class DollInteraction
     {
         bool canPickUp = Inventory.PLAYER_INVENTORY.CheckDuplicateItem(doll);
 
+        if (!canPickUp)
+        {
+            Dialogue.PrintEmptyDollDescription();
+            PressKeyToContinue.RunCommand();
+        }
+
         if (canPickUp)
         {
             doll.PrintFindItem();

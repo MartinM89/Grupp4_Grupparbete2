@@ -6,7 +6,7 @@ public class Audio
 {
     private static SoundPlayer? soundPlayer;
 
-    public static void BackgroundMusic()
+    public static void StartBackgroundMusic()
     {
         if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         {
@@ -34,14 +34,11 @@ public class Audio
             return;
         }
 
-        string ambientMusicFilePath = "./Audio/The Foyer.wav";
-
         if (soundPlayer == null)
         {
             soundPlayer = new SoundPlayer();
         }
 
-        soundPlayer.SoundLocation = ambientMusicFilePath;
         soundPlayer.Stop();
     }
 

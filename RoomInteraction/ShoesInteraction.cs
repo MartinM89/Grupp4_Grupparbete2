@@ -5,6 +5,12 @@ public class ShoesInteraction
     {
         bool canPickUp = Inventory.PLAYER_INVENTORY.CheckDuplicateItem(shoe);
 
+        if (!canPickUp)
+        {
+            Dialogue.PrintEmptyShoesDescription();
+            PressKeyToContinue.RunCommand();
+        }
+
         if (canPickUp)
         {
             shoe.PrintFindItem();

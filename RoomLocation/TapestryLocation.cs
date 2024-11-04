@@ -6,7 +6,7 @@ public class TapestryLocation
     {
         string userChoice;
 
-        while (!TapestryRipped) // Om han har scraper
+        while (!TapestryRipped)
         {
             Console.Clear();
             Dialogue.PrintTapestryDescription();
@@ -41,7 +41,6 @@ public class TapestryLocation
         while (TapestryRipped && !TapestryRemoved)
         {
             Console.Clear();
-            // ScraperInteraction.scraper.MissingTool();
             Dialogue.PrintTapestryRippedDescription();
 
             userChoice = EnterInput.RunCommand();

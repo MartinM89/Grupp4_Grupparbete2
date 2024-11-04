@@ -3,27 +3,25 @@ class KeypadInteraction
     public static TimeSpan endTime = DateTime.Now.TimeOfDay;
     public static void RunCommand()
     {
-        while (Program.attemptsLeft > 0)
+        while (PuzzleManager.attemptsLeft > 0)
         {
             Console.Clear();
-
             string textCode = PuzzleManager.ConvertCodeToString();
-
-            Console.WriteLine($"Attempts left: {Program.attemptsLeft}");
+            Console.WriteLine($"Attempts left: {PuzzleManager.attemptsLeft}");
 
             string userCode = EnterCode.RunCommand();
 
             if (userCode != textCode && userCode.All(char.IsDigit) && userCode.Length.Equals(4))
             {
                 Console.Clear();
-                Program.attemptsLeft--;
+                PuzzleManager.LoseAttempt();
                 Console.WriteLine("Wrong code.");
                 PressKeyToContinue.RunCommand();
                 continue;
             }
             else if (userCode.Equals(textCode))
             {
-                Highscore.Execute();
+                Highscore.Run();
                 EndCredits.RunCommand();
                 return;
             }

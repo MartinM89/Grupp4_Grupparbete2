@@ -2,6 +2,7 @@ public class PuzzleManager
 {
     public static int[] passwordNum { get; private set; } = new int[4];
     public static char[] passwordChar { get; private set; } = new char[4];
+    public static int attemptsLeft = 3;
 
     public static void RandomizeSafeCode()
     {
@@ -34,6 +35,21 @@ public class PuzzleManager
         }
     }
 
+    public static int AttemptsRemaining()
+    {
+        return attemptsLeft;
+    }
+
+    public static void GainExtraAttempt()
+    {
+        attemptsLeft++;
+    }
+
+    public static void LoseAttempt()
+    {
+        attemptsLeft--;
+    }
+
     public static void PrintCode()
     {
         foreach (char c in passwordChar)
@@ -53,14 +69,4 @@ public class PuzzleManager
         }
         return textCode;
     }
-
-    public static void PrintNumberCode() // Debugging
-    {
-        foreach (int i in passwordNum)
-        {
-            Console.Write($"{i} ");
-        }
-        Console.WriteLine();
-    }
-
 }

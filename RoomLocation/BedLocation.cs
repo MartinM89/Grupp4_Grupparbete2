@@ -1,5 +1,3 @@
-using System.Threading;
-
 public class BedLocation
 {
     public static bool ScraperAddedToInventory = false;
@@ -26,10 +24,14 @@ public class BedLocation
                 case "nap":
                     Console.Clear();
 
+                    Audio.StopBackgroundMusic();
                     Audio.PlaySound("./Audio/Audio/dream_sequence.wav");
                     Dialogue.PrintBedSleepDescription();
+                    Thread.Sleep(42000);
 
                     PressKeyToContinue.RunCommand();
+
+                    Audio.StartBackgroundMusic();
 
                     Console.Clear();
                     Dialogue.PrintBedWakeUpDescription();
@@ -41,7 +43,7 @@ public class BedLocation
                     KeypadInteraction.endTime += TimeSpan.FromMinutes(minutes);
                     KeypadInteraction.endTime -= TimeSpan.FromSeconds(seconds);
 
-                    Program.attemptsLeft += 1;
+                    PuzzleManager.GainExtraAttempt();
                     break;
 
                 case "scraper":

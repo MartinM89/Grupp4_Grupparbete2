@@ -3,6 +3,7 @@ public class EndCredits
     public static void RunCommand()
     {
         Audio.StopBackgroundMusic();
+        Audio.PlaySound("./Audio/Audio/end_credits_tony_choice.wav");
         Console.SetWindowSize(74, 23);
 
         List<string> credits = new List<string>
@@ -51,7 +52,7 @@ public class EndCredits
         int terminalWidth = Console.WindowWidth;
         int creditsHeight = credits.Count;
 
-        for (int i = 0; i < creditsHeight + terminalHeight; i++) // 40 + 23
+        for (int i = 0; i < creditsHeight + terminalHeight; i++)
         {
             Console.Clear();
 
@@ -62,8 +63,7 @@ public class EndCredits
                 if (creditIndex >= 0 && creditIndex < creditsHeight)
                 {
                     string line = credits[creditIndex];
-                    //   66
-                    int centeredPosition = (terminalWidth - line.Length) / 2;  // (74 - 8) / 33
+                    int centeredPosition = (terminalWidth - line.Length) / 2;
                     if (centeredPosition < 0) centeredPosition = 0;
 
                     Console.SetCursorPosition(centeredPosition, j);
@@ -76,5 +76,6 @@ public class EndCredits
         Console.SetCursorPosition((terminalWidth - 8) / 2, 10);
         Console.WriteLine("The End!");
         Console.ReadKey();
+        Console.Clear();
     }
 }

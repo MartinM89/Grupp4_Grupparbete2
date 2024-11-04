@@ -8,8 +8,7 @@ public class LampInteraction
         if (!canPickUp)
         {
             Console.Clear();
-            Console.WriteLine("Narrator:");
-            Console.WriteLine("  The lamp is glowing faintly from the newly inserted bulb.");
+            Dialogue.PrintEmptyLampDescription();
             PressKeyToContinue.RunCommand();
             return;
         }
@@ -17,10 +16,7 @@ public class LampInteraction
         while (true)
         {
             Console.Clear();
-            Console.WriteLine("Narrator:");
-            Console.WriteLine("  As you inspect the lamp closer you notice that the lampshade has been");
-            Console.WriteLine("  tampered with. You wonder why but let it go for now. Maybe there is a");
-            Color.TextYellow("  bulb"); Console.WriteLine(" around to insert.");
+            Dialogue.PrintLampDescription();
 
             string userChoice = EnterInput.RunCommand();
 
@@ -32,20 +28,19 @@ public class LampInteraction
                     if (userChoice.Equals(toolIsInInventory))
                     {
                         Console.Clear();
-                        DrawerInteraction.bulb.UseTool(); // You screw on the light bulb.
+                        DrawerInteraction.bulb.UseTool();
                         Audio.PlaySound("./Audio/Audio/lightbulb_screw.wav");
                         PressKeyToContinue.RunCommand();
                         Console.Clear();
-                        lampshade.PrintFindItem(); // The lampshade seems to have burn marks in the shape of a letter and number.
-                        Inventory.PLAYER_INVENTORY.AddItem(lampshade); // You added {item.Name} to your inventory.
+                        lampshade.PrintFindItem();
+                        Inventory.PLAYER_INVENTORY.AddItem(lampshade);
                         TableLocation.LampshadeAddedToInventory = true;
-                        // Remove bulb from inventory?
                         return;
                     }
                     else
                     {
                         Console.Clear();
-                        DrawerInteraction.bulb.MissingTool(); // You need a bulb
+                        DrawerInteraction.bulb.MissingTool();
                         PressKeyToContinue.RunCommand();
                         break;
                     }

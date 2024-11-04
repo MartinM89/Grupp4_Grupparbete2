@@ -154,7 +154,7 @@ public class QueenPiece : Item
     public override void PrintFindItem()
     {
         Console.WriteLine("Narrator:");
-        Console.WriteLine("  You pick up the queen piece positioned on I-3. It's a tad sticky.\n"); // Did you notice that I-3 is not a real position in chess?
+        Console.WriteLine("  You pick up the queen piece positioned on I-3. It's a tad sticky.\n");
     }
 }
 

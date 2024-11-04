@@ -25,8 +25,6 @@ public class Inventory
         {
             if (item.Equals(i))
             {
-                Console.WriteLine($"You already have the {item.Name}."); // Remove, fix shoes and doll first.
-                PressKeyToContinue.RunCommand();
                 return false;
             }
         }
@@ -62,18 +60,9 @@ public class Inventory
 
     public void PrintInventory()
     {
-        if (items.Count.Equals(0) || tools.Count.Equals(0)) // Not required
-        {
-            return;
-        }
-
         Console.WriteLine("Items:");
         foreach (Item item in items)
         {
-            if (items.Count.Equals(0))
-            {
-                Console.WriteLine("Your have no items.");
-            }
             Console.WriteLine($"{item.Name}: {item.LetterNumber}");
         }
         Console.WriteLine("\nTools:");

@@ -25,11 +25,12 @@ public class KeyInteraction
             Console.Clear();
             key.MissingTool();
             PressKeyToContinue.RunCommand();
+            return;
         }
 
         Console.Clear();
         key.UseTool();
-        Highscore.Execute();
+        Highscore.Run();
         EndCredits.RunCommand();
         return;
     }

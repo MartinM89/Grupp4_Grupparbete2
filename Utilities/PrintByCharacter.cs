@@ -27,34 +27,4 @@ public class PrintByCharacter
             return;
         }
     }
-
-    public static void OldRunCommand(string input)
-    {
-        foreach (char c in input)
-        {
-            Console.Write(c);
-        }
-    }
 }
-
-// 'enter' key creates new line
-// public class PrintByCharacter
-// {
-//     public static void RunCommand(string input)
-//     {
-//         bool tst = true;
-//         foreach (char c in input)
-//         {
-//             if (Console.KeyAvailable)
-//             {
-//                 Console.ReadKey();
-//                 tst = false;
-//                 Console.Write("\b");
-//             }
-
-//             Console.Write(c);
-
-//             if (tst) Thread.Sleep(50);
-//         }
-//     }
-// }

@@ -12,7 +12,7 @@ public class Highscore
         this.Time = time;
     }
 
-    public static void RunCommand() // Fixa
+    public static void CreateLoadList()
     {
         string filePath = "./Utilities/highscore.json";
 
@@ -20,7 +20,7 @@ public class Highscore
         {
             File.Create("./Utilities/highscore.json").Close();
         }
-        else if (new FileInfo(filePath).Length.Equals(0)) // If highscore.json is empty, don't load
+        else if (new FileInfo(filePath).Length.Equals(0))
         {
             return;
         }
@@ -36,10 +36,11 @@ public class Highscore
         }
     }
 
-    public static void Execute() // Fixa
+    public static void Run()
     {
         Console.Clear();
         Dialogue.PrintYouWin();
+        PressKeyToContinue.RunCommand();
 
         string playerName = " ";
 
@@ -63,13 +64,13 @@ public class Highscore
         TimeSpan finalTime = KeypadInteraction.endTime - Program.StartTime;
 
         Highscore highscore = new Highscore(playerName, finalTime);
-        Highscore.highscoreList.Add(highscore);
+        highscoreList.Add(highscore);
 
-        Highscore.highscoreList.Sort((time1, time2) => time1.Time.CompareTo(time2.Time));
+        highscoreList.Sort((time1, time2) => time1.Time.CompareTo(time2.Time));
 
-        if (Highscore.highscoreList.Count.Equals(11))
+        if (highscoreList.Count.Equals(11))
         {
-            Highscore.highscoreList.RemoveRange(10, 1);
+            highscoreList.RemoveRange(10, 1);
         }
 
         JsonSerializerOptions json = new JsonSerializerOptions { WriteIndented = true };
@@ -82,27 +83,23 @@ public class Highscore
         string tookMinutes;
         string result;
 
-        for (int i = 0; i < Highscore.highscoreList.Count; i++)
+        for (int i = 0; i < highscoreList.Count; i++)
         {
-            int hour = Highscore.highscoreList[i].Time.Hours;
-            int min = Highscore.highscoreList[i].Time.Minutes;
-            int sec = Highscore.highscoreList[i].Time.Seconds;
-            int hundredth = Highscore.highscoreList[i].Time.Milliseconds / 10;
+            int hour = highscoreList[i].Time.Hours;
+            int min = highscoreList[i].Time.Minutes;
+            int sec = highscoreList[i].Time.Seconds;
+            int hundredth = highscoreList[i].Time.Milliseconds / 10;
 
-            tookHours =
-                $"Place {i + 1} - {Highscore.highscoreList[i].Name}\t\tTime: {hour}h {min}min {sec},{hundredth}sec";
-            tookMinutes =
-                $"Place {i + 1} - {Highscore.highscoreList[i].Name}\t\tTime: {min}min {sec},{hundredth}sec";
+            tookHours = $"Place {i + 1} - {highscoreList[i].Name}\t\tTime: {hour}h {min}min {sec},{hundredth}sec";
+            tookMinutes = $"Place {i + 1} - {highscoreList[i].Name}\t\tTime: {min}min {sec},{hundredth}sec";
 
             string r = hour > 0 ? tookHours : tookMinutes;
 
             Console.WriteLine(r);
         }
 
-        tookHours =
-            $"\n\tYour time: {finalTime.Hours}h {finalTime.Minutes}min {finalTime.Seconds},{finalTime.Milliseconds / 10}sec!";
-        tookMinutes =
-            $"\n\tYour time: {finalTime.Minutes}min {finalTime.Seconds},{finalTime.Milliseconds / 10}sec";
+        tookHours = $"\n\tYour time: {finalTime.Hours}h {finalTime.Minutes}min {finalTime.Seconds},{finalTime.Milliseconds / 10}sec!";
+        tookMinutes = $"\n\tYour time: {finalTime.Minutes}min {finalTime.Seconds},{finalTime.Milliseconds / 10}sec";
 
         result = finalTime.Hours > 0 ? tookHours : tookMinutes;
 

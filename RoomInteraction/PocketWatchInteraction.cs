@@ -6,6 +6,12 @@ public class PocketWatchInteraction
         Console.Clear();
         bool canPickUp = Inventory.PLAYER_INVENTORY.CheckDuplicateItem(watch);
 
+        if (!canPickUp)
+        {
+            Dialogue.PrintEmptyPocketWatchDescription();
+            PressKeyToContinue.RunCommand();
+        }
+
         if (canPickUp)
         {
             watch.PrintFindItem();

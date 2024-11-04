@@ -1,3 +1,5 @@
+using LibVLCSharp.Shared;
+
 public class BusinessCardInteraction
 {
     public static BusinessCard card = new BusinessCard();
@@ -5,6 +7,12 @@ public class BusinessCardInteraction
     {
         Console.Clear();
         bool canPickUp = Inventory.PLAYER_INVENTORY.CheckDuplicateItem(card);
+
+        if (!canPickUp)
+        {
+            Dialogue.PrintEmptyShoesDescription();
+            PressKeyToContinue.RunCommand();
+        }
 
         if (canPickUp)
         {
