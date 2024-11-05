@@ -23,7 +23,7 @@
 
 /*
     Print Character // Tony
-    PressKeyToContinue
+    PressKeyToContinue // Du kan ta med båda (inte så lång kod)
 
     Audio // Martin
 
@@ -32,13 +32,11 @@
 
     Color/Location Manager // Martin
 
-    Item // Tony
-    Inventory
+    Item // Tony - Object, Item och Letter
+    Inventory // Tony - AddItem, CheckDuplicateItem, CheckToolInInventory, PrintInventory
 
     Location Chessboard // Jimmy
     Interaction Queen
 
     Highscore // Jimmy
-
-    End Credits // Martin
 */
