@@ -5,6 +5,7 @@ public class Inventory
     private List<Item> items = new List<Item>() { letter };
     private List<Tool> tools = new List<Tool>();
     public static Inventory PLAYER_INVENTORY = new Inventory();
+
     public void AddItem(Item item)
     {
         items.Add(item);

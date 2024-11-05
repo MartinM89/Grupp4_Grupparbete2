@@ -2,6 +2,7 @@ public abstract class Object
 {
     public string? Name { get; private set; }
     public string? Description { get; private set; }
+
     public Object(string name, string description)
     {
         this.Name = name;
@@ -179,11 +180,13 @@ public abstract class Tool : Object
     public Tool(string name, string description) : base(name, description)
     {
     }
+
     public virtual void UseTool()
     {
         Console.WriteLine("Narrator:");
         Console.WriteLine($"  You use the {this.Name}.");
     }
+
     public virtual void MissingTool()
     {
         Console.WriteLine("Narrator:");

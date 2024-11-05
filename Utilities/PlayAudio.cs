@@ -1,6 +1,6 @@
 using System.Media;
-using System.Runtime.InteropServices;
 using LibVLCSharp.Shared;
+using System.Runtime.InteropServices;
 
 public class Audio
 {
