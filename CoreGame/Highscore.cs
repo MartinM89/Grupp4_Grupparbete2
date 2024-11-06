@@ -42,8 +42,8 @@ public class Highscore
         Dialogue.PrintYouWin();
         PressKeyToContinue.RunCommand();
 
-        string playerName = " ";
         TimeSpan finalTime = KeypadInteraction.endTime - Program.StartTime;
+        string playerName = " ";
 
         while (true)
         {
@@ -54,19 +54,16 @@ public class Highscore
             Console.Write("Write your name (Exactly 3 letters): ");
             playerName = Console.ReadLine()!;
 
-            if (playerName.Length.Equals(3))
-            {
-                break;
-            }
-            else
+            if (!playerName.Length.Equals(3))
             {
                 Console.WriteLine("\nName must be 3 letters.");
                 PressKeyToContinue.RunCommand();
+                continue;
             }
+            break;
         }
 
-        Highscore highscore = new Highscore(playerName, finalTime);
-        highscoreList.Add(highscore);
+        highscoreList.Add(new Highscore(playerName, finalTime));
 
         highscoreList.Sort((time1, time2) => time1.Time.CompareTo(time2.Time));
 
@@ -95,9 +92,9 @@ public class Highscore
             tookHours = $"Place {i + 1} - {highscoreList[i].Name}\t\tTime: {hour}h {min}min {sec},{hundredth}sec";
             tookMinutes = $"Place {i + 1} - {highscoreList[i].Name}\t\tTime: {min}min {sec},{hundredth}sec";
 
-            string r = hour > 0 ? tookHours : tookMinutes;
+            string topTenResults = hour > 0 ? tookHours : tookMinutes;
 
-            Console.WriteLine(r);
+            Console.WriteLine(topTenResults);
         }
 
         tookHours = $"\n\tYour time: {finalTime.Hours}h {finalTime.Minutes}min {finalTime.Seconds},{finalTime.Milliseconds / 10}sec!";

@@ -2,6 +2,9 @@ public class InitializeGame
 {
     public static void RunCommand()
     {
+        // Initialize libVLC with the correct path to native libraries
+        LibVLCSharp.Shared.Core.Initialize();
+
         Highscore.CreateLoadList();
         PuzzleManager.RandomizeSafeCode();
 
@@ -13,6 +16,6 @@ public class InitializeGame
         HowToPlay.RunCommand();
         PressKeyToContinue.RunCommand();
 
-        // Audio.StartBackgroundMusic();
+        // AudioPlayer.StartBackgroundMusic();
     }
 }

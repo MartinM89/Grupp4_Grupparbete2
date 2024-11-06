@@ -13,9 +13,6 @@ public class AudioPlayer
             return;
         }
 
-        // Initialize libVLC with the correct path to native libraries
-        Core.Initialize();
-
         string ambientMusicFilePath = "./Audio/The Foyer (LOUD).wav";
 
         if (soundPlayer == null)
