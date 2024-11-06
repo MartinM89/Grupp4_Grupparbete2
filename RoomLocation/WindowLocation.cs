@@ -16,7 +16,7 @@ class WindowLocation
         {
             Console.Clear();
             Dialogue.PrintWindowDescription();
-            Audio.PlaySound("./Audio/Audio/window_wind.wav");
+            AudioPlayer.PlaySound("./Audio/Audio/window_wind.wav");
             string userChoice = EnterInput.RunCommand();
 
             switch (userChoice)

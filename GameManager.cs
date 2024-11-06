@@ -65,6 +65,10 @@ public class GameManager
                 ExitCommand.RunCommand();
                 break;
 
+            case "key": // PRESENTATION ONLY
+                KeyInteraction.InsertKey(userInput);
+                break;
+
             default:
                 InvalidInput.RunCommand(userInput);
                 break;

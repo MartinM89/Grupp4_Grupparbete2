@@ -9,7 +9,7 @@ public class CrowbarInteraction
             Console.Clear();
             WardrobeLocation.WardrobeUnlocked = true;
             CrowbarLocation.crowbar.UseTool();
-            Audio.PlaySound("./Audio/Audio/wardrobe_crowbar_creak.wav");
+            AudioPlayer.PlaySound("./Audio/Audio/wardrobe_crowbar_creak.wav");
             PressKeyToContinue.RunCommand();
             return;
         }

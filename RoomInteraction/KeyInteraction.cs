@@ -10,7 +10,7 @@ public class KeyInteraction
         {
             Console.Clear();
             key.PrintFindItem();
-            Audio.PlaySound("./Audio/Audio/find_secret.wav");
+            AudioPlayer.PlaySound("./Audio/Audio/find_secret.wav");
             Inventory.PLAYER_INVENTORY.AddTool(key);
             PaintingLocation.KeyAddedToInventory = true;
         }
@@ -30,7 +30,7 @@ public class KeyInteraction
 
         Console.Clear();
         key.UseTool();
-        Highscore.Run();
+        Highscore.AddAndPrintList();
         EndCredits.RunCommand();
         return;
     }

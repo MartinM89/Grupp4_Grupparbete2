@@ -2,7 +2,7 @@ using System.Media;
 using LibVLCSharp.Shared;
 using System.Runtime.InteropServices;
 
-public class Audio
+public class AudioPlayer
 {
     private static SoundPlayer? soundPlayer;
 

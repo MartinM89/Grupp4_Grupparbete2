@@ -30,7 +30,8 @@
     Enter Input // Jimmy
     Invalid Input
 
-    Color/Location Manager // Martin
+    Location Manager // Martin
+    Color
 
     Item // Tony - Object, Item och Letter
     Inventory // Tony - AddItem, CheckDuplicateItem, CheckToolInInventory, PrintInventory

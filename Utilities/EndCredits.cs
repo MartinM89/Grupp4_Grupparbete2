@@ -2,8 +2,8 @@ public class EndCredits
 {
     public static void RunCommand()
     {
-        Audio.StopBackgroundMusic();
-        Audio.PlaySound("./Audio/Audio/end_credits_tony_choice.wav");
+        AudioPlayer.StopBackgroundMusic();
+        AudioPlayer.PlaySound("./Audio/Audio/end_credits_tony_choice.wav");
         Console.SetWindowSize(74, 23);
 
         List<string> credits = new List<string>

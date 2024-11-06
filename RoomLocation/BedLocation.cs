@@ -24,14 +24,14 @@ public class BedLocation
                 case "nap":
                     Console.Clear();
 
-                    Audio.StopBackgroundMusic();
-                    Audio.PlaySound("./Audio/Audio/dream_sequence.wav");
+                    AudioPlayer.StopBackgroundMusic();
+                    AudioPlayer.PlaySound("./Audio/Audio/dream_sequence.wav");
                     Dialogue.PrintBedSleepDescription();
                     Thread.Sleep(42000);
 
                     PressKeyToContinue.RunCommand();
 
-                    Audio.StartBackgroundMusic();
+                    AudioPlayer.StartBackgroundMusic();
 
                     Console.Clear();
                     Dialogue.PrintBedWakeUpDescription();

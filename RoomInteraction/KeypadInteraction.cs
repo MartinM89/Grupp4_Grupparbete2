@@ -21,7 +21,7 @@ class KeypadInteraction
             }
             else if (userCode.Equals(textCode))
             {
-                Highscore.Run();
+                Highscore.AddAndPrintList();
                 EndCredits.RunCommand();
                 return;
             }

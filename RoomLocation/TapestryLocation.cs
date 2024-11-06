@@ -17,7 +17,7 @@ public class TapestryLocation
             {
                 case "corner":
                     TapestryRipped = true;
-                    Audio.PlaySound("./Audio/Audio/tapestry_rip.wav");
+                    AudioPlayer.PlaySound("./Audio/Audio/tapestry_rip.wav");
                     continue;
 
                 case "inventory" or "inv":
@@ -49,7 +49,7 @@ public class TapestryLocation
             {
                 case "scraper":
                     RemoveTapestryInteraction.RunCommand(userChoice);
-                    Audio.PlaySound("./Audio/Audio/tapestry_scraper.wav");
+                    AudioPlayer.PlaySound("./Audio/Audio/tapestry_scraper.wav");
                     PressKeyToContinue.RunCommand();
                     break;
 

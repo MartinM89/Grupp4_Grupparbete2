@@ -29,28 +29,32 @@ public class Highscore
             string jsonString = File.ReadAllText(filePath);
             List<Highscore> json = JsonSerializer.Deserialize<List<Highscore>>(jsonString)!;
 
-            foreach (var highscore in json)
+            foreach (Highscore highscore in json)
             {
                 highscoreList.Add(highscore);
             }
         }
     }
 
-    public static void Run()
+    public static void AddAndPrintList()
     {
         Console.Clear();
         Dialogue.PrintYouWin();
         PressKeyToContinue.RunCommand();
 
         string playerName = " ";
+        TimeSpan finalTime = KeypadInteraction.endTime - Program.StartTime;
 
         while (true)
         {
+            if (highscoreList.Count >= 0 && highscoreList.Count < 10) { }
+            else if (!(finalTime < highscoreList.ElementAt(9).Time)) { break; }
+
             Console.Clear();
             Console.Write("Write your name (Exactly 3 letters): ");
             playerName = Console.ReadLine()!;
 
-            if (playerName.Length == 3)
+            if (playerName.Length.Equals(3))
             {
                 break;
             }
@@ -60,8 +64,6 @@ public class Highscore
                 PressKeyToContinue.RunCommand();
             }
         }
-
-        TimeSpan finalTime = KeypadInteraction.endTime - Program.StartTime;
 
         Highscore highscore = new Highscore(playerName, finalTime);
         highscoreList.Add(highscore);

@@ -29,7 +29,7 @@ public class LampInteraction
                     {
                         Console.Clear();
                         DrawerInteraction.bulb.UseTool();
-                        Audio.PlaySound("./Audio/Audio/lightbulb_screw.wav");
+                        AudioPlayer.PlaySound("./Audio/Audio/lightbulb_screw.wav");
                         PressKeyToContinue.RunCommand();
                         Console.Clear();
                         lampshade.PrintFindItem();
