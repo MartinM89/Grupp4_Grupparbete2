@@ -202,22 +202,20 @@ class Dialogue
 
     public static void PrintBedSleepDescription()
     {
-        string dreamText = "Narrator:\n" +
-        "  As you close your eyes, sleep quickly takes over. In the darkness, a\n" +
-        "  faint image starts to form, pulling you deeper into a dream.\n" +
-
-        "  You see the old man, his back hunched as he works with steady hands,\n" +
-        "  carefully hanging the tapestry that now adorns the walls. His face is\n" +
-        "  tired and fatigued, but his expression is focused. He steps back,\n" +
-        "  inspecting his work. He mutters to himself, something about \"hiding\n" +
-        "  things where only the patient will find them.\"\n\n" +
-
-        "  The room feels warmer in the dream, the old man wiping sweat from his\n" +
-        "  brow. He reaches into his coat pocket, pulling out a worn scraper.\n" +
-        "  Slowly, he begins to smooth the edges of the tapestry.\n\n" +
-
-        "  Then, the scene fades. His figure blurs into shadow, leaving only the\n" +
-        "  image of the tapestry swaying slightly on the walls.\n";
+        string dreamText =
+            "Narrator:\n"
+            + "  As you close your eyes, sleep quickly takes over. In the darkness, a\n"
+            + "  faint image starts to form, pulling you deeper into a dream.\n"
+            + "  You see the old man, his back hunched as he works with steady hands,\n"
+            + "  carefully hanging the tapestry that now adorns the walls. His face is\n"
+            + "  tired and fatigued, but his expression is focused. He steps back,\n"
+            + "  inspecting his work. He mutters to himself, something about \"hiding\n"
+            + "  things where only the patient will find them.\"\n\n"
+            + "  The room feels warmer in the dream, the old man wiping sweat from his\n"
+            + "  brow. He reaches into his coat pocket, pulling out a worn scraper.\n"
+            + "  Slowly, he begins to smooth the edges of the tapestry.\n\n"
+            + "  Then, the scene fades. His figure blurs into shadow, leaving only the\n"
+            + "  image of the tapestry swaying slightly on the walls.\n";
 
         PrintByCharacter.RunCommand(dreamText);
     }
@@ -320,20 +318,20 @@ class Dialogue
     #region WIN DIALOGUE
     public static void PrintYouWin()
     {
-        string winText = "Narrator:\n" +
-        "  As you open the safe, your heart races with anticipation. Inside, you\n" +
-        "  discover two rings—one belonging to Henry and the other a delicate band\n" +
-        "  worn by his beloved wife. Nestled beside the rings is a faded\n" +
-        "  photograph capturing a moment of joy, showing the young couple in their\n" +
-        "  prime, their faces filled with happiness.\n\n" +
-
-        "  But amidst these unique treasures, your eyes are drawn to a sealed\n" +
-        "  envelope, similar to the one that guided you here. Its edges are worn,\n" +
-        "  and the handwriting on the front is unmistakably Henry's. You feel a\n" +
-        "  sense of excitement; what other secrets and mysteries does Henry hold?\n" +
-        "  As you take the envelope in hand, you realize this journey may have\n" +
-        "  just begun, and the real adventure might still await you beyond this\n" +
-        "  room.\n";
+        string winText =
+            "Narrator:\n"
+            + "  As you open the safe, your heart races with anticipation. Inside, you\n"
+            + "  discover two rings—one belonging to Henry and the other a delicate band\n"
+            + "  worn by his beloved wife. Nestled beside the rings is a faded\n"
+            + "  photograph capturing a moment of joy, showing the young couple in their\n"
+            + "  prime, their faces filled with happiness.\n\n"
+            + "  But amidst these unique treasures, your eyes are drawn to a sealed\n"
+            + "  envelope, similar to the one that guided you here. Its edges are worn,\n"
+            + "  and the handwriting on the front is unmistakably Henry's. You feel a\n"
+            + "  sense of excitement; what other secrets and mysteries does Henry hold?\n"
+            + "  As you take the envelope in hand, you realize this journey may have\n"
+            + "  just begun, and the real adventure might still await you beyond this\n"
+            + "  room.\n";
 
         PrintByCharacter.RunCommand(winText);
     }

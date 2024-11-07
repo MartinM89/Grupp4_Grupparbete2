@@ -17,7 +17,8 @@ public abstract class Item : Object
 {
     public string? LetterNumber { get; private set; }
 
-    public Item(string name, string description, string letterNumber) : base(name, description)
+    public Item(string name, string description, string letterNumber)
+        : base(name, description)
     {
         this.LetterNumber = letterNumber;
     }
@@ -25,25 +26,22 @@ public abstract class Item : Object
 
 public class Letter : Item
 {
-    public Letter() : base("Letter", "Description", "J-8")
-    {
-    }
+    public Letter()
+        : base("Letter", "Description", "J-8") { }
 
     public override void PrintFindItem()
     {
-        string letterText = "Dear Reader,\n\n" +
-
-        "  If you're holding this, it means you're curious. Good. I've left something\n" +
-        "  for those with the patience and sharp eyes to find it. There's a safe in\n" +
-        "  this room, and inside it, well... that's for you to discover. The code is\n" +
-        "  hidden among the things I've left behind. You'll have to piece it together.\n\n" +
-
-        "  I always believed that the best rewards come from a little hard work.\n" +
-        "  Take your time, look closely, and don't rush. If you've made it this far,\n" +
-        "  you're already on the right track.\n\n" +
-
-        "Best of luck,\n" +
-        "~Henry\n";
+        string letterText =
+            "Dear Reader,\n\n"
+            + "  If you're holding this, it means you're curious. Good. I've left something\n"
+            + "  for those with the patience and sharp eyes to find it. There's a safe in\n"
+            + "  this room, and inside it, well... that's for you to discover. The code is\n"
+            + "  hidden among the things I've left behind. You'll have to piece it together.\n\n"
+            + "  I always believed that the best rewards come from a little hard work.\n"
+            + "  Take your time, look closely, and don't rush. If you've made it this far,\n"
+            + "  you're already on the right track.\n\n"
+            + "Best of luck,\n"
+            + "~Henry\n";
 
         PrintByCharacter.RunCommand(letterText);
     }
@@ -66,9 +64,8 @@ public class Journal : Item
 
 public class Note : Item
 {
-    public Note() : base("Note", "Description", "F-2")
-    {
-    }
+    public Note()
+        : base("Note", "Description", "F-2") { }
 
     public override void PrintFindItem()
     {
@@ -79,9 +76,8 @@ public class Note : Item
 
 public class Wallet : Item
 {
-    public Wallet() : base("Wallet", "Description", "A-9")
-    {
-    }
+    public Wallet()
+        : base("Wallet", "Description", "A-9") { }
 
     public override void PrintFindItem()
     {
@@ -92,9 +88,8 @@ public class Wallet : Item
 
 public class BusinessCard : Item
 {
-    public BusinessCard() : base("Business card", "Description", "C-6")
-    {
-    }
+    public BusinessCard()
+        : base("Business card", "Description", "C-6") { }
 
     public override void PrintFindItem()
     {
@@ -106,9 +101,8 @@ public class BusinessCard : Item
 
 public class PocketWatch : Item
 {
-    public PocketWatch() : base("Pocket watch", "Description", "B-4")
-    {
-    }
+    public PocketWatch()
+        : base("Pocket watch", "Description", "B-4") { }
 
     public override void PrintFindItem()
     {
@@ -120,9 +114,8 @@ public class PocketWatch : Item
 
 public class Shoes : Item
 {
-    public Shoes() : base("Shoes", "Description", "D-1")
-    {
-    }
+    public Shoes()
+        : base("Shoes", "Description", "D-1") { }
 
     public override void PrintFindItem()
     {
@@ -134,9 +127,8 @@ public class Shoes : Item
 
 public class Doll : Item
 {
-    public Doll() : base("Doll", "Description", "E-7")
-    {
-    }
+    public Doll()
+        : base("Doll", "Description", "E-7") { }
 
     public override void PrintFindItem()
     {
@@ -148,9 +140,8 @@ public class Doll : Item
 
 public class QueenPiece : Item
 {
-    public QueenPiece() : base("Queen", "Description", "I-3")
-    {
-    }
+    public QueenPiece()
+        : base("Queen", "Description", "I-3") { }
 
     public override void PrintFindItem()
     {
@@ -161,9 +152,8 @@ public class QueenPiece : Item
 
 public class Lampshade : Item
 {
-    public Lampshade() : base("Lampshade", "Description", "G-0")
-    {
-    }
+    public Lampshade()
+        : base("Lampshade", "Description", "G-0") { }
 
     public override void PrintFindItem()
     {
@@ -177,9 +167,8 @@ public class Lampshade : Item
 #region Tools
 public abstract class Tool : Object
 {
-    public Tool(string name, string description) : base(name, description)
-    {
-    }
+    public Tool(string name, string description)
+        : base(name, description) { }
 
     public virtual void UseTool()
     {
@@ -202,9 +191,8 @@ public abstract class Tool : Object
 
 public class Knife : Tool
 {
-    public Knife() : base("Knife", "A sharp, small knife with a wooden handle.")
-    {
-    }
+    public Knife()
+        : base("Knife", "A sharp, small knife with a wooden handle.") { }
 
     public override void UseTool()
     {
@@ -228,9 +216,8 @@ public class Knife : Tool
 
 public class Crowbar : Tool
 {
-    public Crowbar() : base("Crowbar", "It feels like it could pry open just about anything.")
-    {
-    }
+    public Crowbar()
+        : base("Crowbar", "It feels like it could pry open just about anything.") { }
 
     public override void UseTool()
     {
@@ -259,9 +246,8 @@ public class Crowbar : Tool
 }
 public class Scraper : Tool
 {
-    public Scraper() : base("Scraper", "A rusty, flat tool, perfect for scraping away layers of dirt.")
-    {
-    }
+    public Scraper()
+        : base("Scraper", "A rusty, flat tool, perfect for scraping away layers of dirt.") { }
 
     public override void UseTool()
     {
@@ -284,9 +270,8 @@ public class Scraper : Tool
 
 public class Bulb : Tool
 {
-    public Bulb() : base("Bulb", "A small, dusty light bulb. When held, it feels unusually cold.")
-    {
-    }
+    public Bulb()
+        : base("Bulb", "A small, dusty light bulb. When held, it feels unusually cold.") { }
 
     public override void UseTool()
     {
@@ -309,9 +294,8 @@ public class Bulb : Tool
 
 public class Key : Tool
 {
-    public Key() : base("Key", "An old scratched metal key.")
-    {
-    }
+    public Key()
+        : base("Key", "An old scratched metal key.") { }
 
     public override void UseTool()
     {

@@ -30,14 +30,9 @@ public class PuzzleManager
                 7 => 'E',
                 8 => 'J',
                 9 => 'A',
-                _ => ' '
+                _ => ' ',
             };
         }
-    }
-
-    public static int AttemptsRemaining()
-    {
-        return attemptsLeft;
     }
 
     public static void GainExtraAttempt()
@@ -63,7 +58,7 @@ public class PuzzleManager
     {
         string textCode = "";
 
-        foreach (int n in PuzzleManager.passwordNum)
+        foreach (int n in passwordNum)
         {
             textCode += n.ToString();
         }

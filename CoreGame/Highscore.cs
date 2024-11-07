@@ -14,25 +14,26 @@ public class Highscore
 
     public static void CreateLoadList()
     {
-        string filePath = "./Utilities/highscore.json";
+        string filePath = "./Saves/highscore.json";
 
         if (!File.Exists(filePath))
         {
-            File.Create("./Utilities/highscore.json").Close();
+            Directory.CreateDirectory("./Saves/");
+            File.Create("./Saves/highscore.json").Close();
+            return;
         }
-        else if (new FileInfo(filePath).Length.Equals(0))
+
+        if (new FileInfo(filePath).Length.Equals(0))
         {
             return;
         }
-        else
-        {
-            string jsonString = File.ReadAllText(filePath);
-            List<Highscore> json = JsonSerializer.Deserialize<List<Highscore>>(jsonString)!;
 
-            foreach (Highscore highscore in json)
-            {
-                highscoreList.Add(highscore);
-            }
+        string jsonString = File.ReadAllText(filePath);
+        List<Highscore> json = JsonSerializer.Deserialize<List<Highscore>>(jsonString)!;
+
+        foreach (Highscore highscore in json)
+        {
+            highscoreList.Add(highscore);
         }
     }
 
@@ -74,7 +75,7 @@ public class Highscore
 
         JsonSerializerOptions json = new JsonSerializerOptions { WriteIndented = true };
         string jsonString = JsonSerializer.Serialize(Highscore.highscoreList, json);
-        File.WriteAllText("./Utilities/highscore.json", jsonString);
+        File.WriteAllText("./Saves/highscore.json", jsonString);
 
         Console.Clear();
 

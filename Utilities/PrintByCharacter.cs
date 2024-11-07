@@ -2,9 +2,6 @@ public class PrintByCharacter
 {
     public static void RunCommand(string input)
     {
-        // int startLeft = Console.CursorLeft;
-        // int startTop = Console.CursorTop;
-
         foreach (char c in input)
         {
             if (!Console.KeyAvailable)
@@ -16,7 +13,6 @@ public class PrintByCharacter
 
             Console.ReadKey();
             Console.Clear();
-            // Console.SetCursorPosition(startLeft, startTop);
             Console.Write(input);
             return;
         }

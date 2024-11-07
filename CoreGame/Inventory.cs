@@ -47,7 +47,6 @@ public class Inventory
 
     public string CheckToolInInventory(string tool)
     {
-
         foreach (Tool t in tools)
         {
             if (tool.Equals(t.Name?.ToLower()))

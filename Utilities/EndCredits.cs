@@ -3,7 +3,7 @@ public class EndCredits
     public static void RunCommand()
     {
         AudioPlayer.StopBackgroundMusic();
-        AudioPlayer.PlaySound("./Audio/Audio/end_credits_tony_choice.wav");
+        AudioPlayer.PlaySound("./Audio/Sounds/end_credits_tony_choice.wav");
         Console.SetWindowSize(74, 23);
 
         List<string> credits = new List<string>
@@ -45,7 +45,7 @@ public class EndCredits
             "",
             "Thank you for playing our game!",
             "",
-            ""
+            "",
         };
 
         int terminalHeight = Console.WindowHeight;
@@ -64,7 +64,8 @@ public class EndCredits
                 {
                     string line = credits[creditIndex];
                     int centeredPosition = (terminalWidth - line.Length) / 2;
-                    if (centeredPosition < 0) centeredPosition = 0;
+                    if (centeredPosition < 0)
+                        centeredPosition = 0;
 
                     Console.SetCursorPosition(centeredPosition, j);
                     Console.WriteLine(credits[creditIndex]);

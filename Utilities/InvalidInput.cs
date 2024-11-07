@@ -6,11 +6,10 @@ public class InvalidInput
         {
             Console.Write($"\nInvalid Input. "); Color.TextRed("NULL"); Console.Write(" does not exist.");
             Console.ReadKey();
+            return;
         }
-        else
-        {
-            Console.Write($"\nInvalid Input. "); Color.TextRed(userInput.ToUpper()); Console.Write(" does not exist.");
-            Console.ReadKey();
-        }
+
+        Console.Write($"\nInvalid Input. "); Color.TextRed(userInput.ToUpper()); Console.Write(" does not exist.");
+        Console.ReadKey();
     }
 }

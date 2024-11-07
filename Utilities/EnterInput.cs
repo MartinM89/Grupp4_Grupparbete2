@@ -7,6 +7,7 @@ public class EnterInput
         return input;
     }
 }
+
 public class EnterCode
 {
     public static string RunCommand()

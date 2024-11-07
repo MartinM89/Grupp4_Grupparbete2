@@ -20,24 +20,3 @@
         }
     }
 }
-
-/*
-    Print Character // Tony
-    PressKeyToContinue // Du kan ta med båda (inte så lång kod)
-
-    Audio // Martin
-
-    Enter Input // Jimmy
-    Invalid Input
-
-    Location Manager // Martin
-    Color
-
-    Item // Tony - Object, Item och Letter
-    Inventory // Tony - AddItem, CheckDuplicateItem, CheckToolInInventory, PrintInventory
-
-    Location Chessboard // Jimmy
-    Interaction Queen
-
-    Highscore // Jimmy
-*/

@@ -1,6 +1,6 @@
 using System.Media;
-using LibVLCSharp.Shared;
 using System.Runtime.InteropServices;
+using LibVLCSharp.Shared;
 
 public class AudioPlayer
 {
@@ -13,7 +13,7 @@ public class AudioPlayer
             return;
         }
 
-        string ambientMusicFilePath = "./Audio/The Foyer (LOUD).wav";
+        string ambientMusicFilePath = "./Audio/The Foyer.wav";
 
         if (soundPlayer == null)
         {
