@@ -52,7 +52,7 @@ public class AudioPlayer
         Media media = new Media(libVLC, audioPath, FromType.FromPath);
 
         mediaPlayer.Media = media;
-        mediaPlayer.Volume = 100;
+        mediaPlayer.Volume = 400;
 
         mediaPlayer.Play();
     }
